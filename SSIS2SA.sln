@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS2SA", "SSIS2SA\SSIS2SA.dtproj", "{7881C7BC-2F6F-4D49-94A6-2D7C95AD521B}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS2SA", "SSIS2SA\SSIS2SA.dtproj", "{7BCD12FC-DA6B-4250-A646-EC6E434C3397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7881C7BC-2F6F-4D49-94A6-2D7C95AD521B}.Development|Default.ActiveCfg = Development
-		{7881C7BC-2F6F-4D49-94A6-2D7C95AD521B}.Development|Default.Build.0 = Development
+		{7BCD12FC-DA6B-4250-A646-EC6E434C3397}.Development|Default.ActiveCfg = Development
+		{7BCD12FC-DA6B-4250-A646-EC6E434C3397}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
