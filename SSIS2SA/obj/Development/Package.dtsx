@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{529D232F-AA1A-401A-B43C-85A9DE7934B1}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{9C5F77E5-D5DB-4EF3-872C-D17F8F57E07B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2964,7 +2964,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
+                  name="OpenRowset">[OLE DB Destination]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3954,82 +3954,93 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[eventid]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="eventid" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[iyear]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="iyear" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[imonth]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="imonth" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[iday]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="iday" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[approxdate]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="approxdate" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[extended]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="extended" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[resolution]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="resolution" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="country" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="country_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="region" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="region_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[provstate]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="provstate" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="city" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="latitude" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="longitude" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[specificity]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="specificity" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vicinity]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="vicinity" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="location" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[summary]"
@@ -4037,556 +4048,593 @@
                       name="summary" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crit1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="crit1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crit2]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="crit2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crit3]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="crit3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[doubtterr]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="doubtterr" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[alternative]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="alternative" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[alternative_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="alternative_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[multiple]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="multiple" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[success]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="success" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[suicide]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="suicide" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[attacktype1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="attacktype1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[attacktype1_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="attacktype1_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[attacktype2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="attacktype2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[attacktype2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="attacktype2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[attacktype3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="attacktype3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[attacktype3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="attacktype3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targtype1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="targtype1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targtype1_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targtype1_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targsubtype1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="targsubtype1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targsubtype1_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targsubtype1_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[corp1]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="corp1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[target1]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="target1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[natlty1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="natlty1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[natlty1_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="natlty1_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targtype2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targtype2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targtype2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targtype2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targsubtype2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targsubtype2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targsubtype2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targsubtype2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[corp2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="corp2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[target2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="target2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[natlty2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="natlty2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[natlty2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="natlty2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targtype3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targtype3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targtype3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targtype3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targsubtype3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targsubtype3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[targsubtype3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="targsubtype3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[corp3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="corp3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[target3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="target3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[natlty3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="natlty3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[natlty3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="natlty3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gname]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="gname" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gsubname]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="gsubname" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gname2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="gname2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gsubname2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="gsubname2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gname3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="gname3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ingroup]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="ingroup" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ingroup2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ingroup2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ingroup3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ingroup3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gsubname3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="gsubname3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[motive]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="motive" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guncertain1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="guncertain1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guncertain2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="guncertain2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guncertain3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="guncertain3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nperps]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nperps" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nperpcap]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nperpcap" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimed]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="claimed" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimmode]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claimmode" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimmode_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claimmode_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claim2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claim2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimmode2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claimmode2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimmode2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claimmode2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claim3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claim3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimmode3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claimmode3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[claimmode3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="claimmode3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[compclaim]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="compclaim" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="weaptype1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype1_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype1_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="weapsubtype1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype1_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype1_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype2_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype2_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype3_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype3_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype4]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype4" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weaptype4_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weaptype4_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype4]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype4" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapsubtype4_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapsubtype4_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapdetail]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="weapdetail" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nkill]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nkill" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nkillus]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nkillus" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nkillter]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nkillter" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nwound]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nwound" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nwoundus]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nwoundus" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nwoundte]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nwoundte" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[property]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="property" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[propextent]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="propextent" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[propextent_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="propextent_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[propvalue]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="propvalue" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[propcomment]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="propcomment" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ishostkid]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="ishostkid" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nhostkid]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nhostkid" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nhostkidus]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="nhostkidus" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nhours]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="nhours" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ndays]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ndays" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[divert]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="divert" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kidhijcountry]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="kidhijcountry" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ransom]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="ransom" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ransomamt]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="ransomamt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ransomamtus]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ransomamtus" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ransompaid]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ransompaid" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ransompaidus]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ransompaidus" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ransomnote]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="ransomnote" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hostkidoutcome]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="hostkidoutcome" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hostkidoutcome_txt]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="hostkidoutcome_txt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nreleased]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="nreleased" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[addnotes]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="addnotes" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[scite1]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="scite1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[scite2]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="scite2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[scite3]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="scite3" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dbsource]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="dbsource" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INT_LOG]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="INT_LOG" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INT_IDEO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="INT_IDEO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INT_MISC]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="INT_MISC" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INT_ANY]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="512"
                       name="INT_ANY" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[related]"
                       dataType="wstr"
-                      length="255"
+                      length="512"
                       name="related" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExecGUID]"
@@ -5613,17 +5661,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Data Flow Task\Excel Source"
-          TopLeft="233,8" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="54,288" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="176,92" />
+        <NodeLayout
           Size="163,42"
           Id="Package\Data Flow Task\Script Component"
           TopLeft="112,181" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Data Flow Task\Excel Source"
+          TopLeft="233,8" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output 0]"
           TopLeft="193.5,223">
@@ -5650,44 +5702,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     Point3="-54,36.5" />
                   <mssgle:LineSegment
                     End="-54,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="176,92" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="253,134">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-59.5,47"
-              Start="0,0"
-              End="-59.5,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
-                  <mssgle:LineSegment
-                    End="-55.5,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.5,23.5"
-                    Point2="-59.5,23.5"
-                    Point3="-59.5,27.5" />
-                  <mssgle:LineSegment
-                    End="-59.5,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5730,11 +5744,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="253,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5,47"
+              Start="0,0"
+              End="-59.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-55.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5,23.5"
+                    Point2="-59.5,23.5"
+                    Point3="-59.5,27.5" />
+                  <mssgle:LineSegment
+                    End="-59.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Excel Source">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5747,7 +5795,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
