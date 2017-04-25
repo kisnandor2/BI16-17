@@ -108,7 +108,7 @@ IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo
 ALTER TABLE [dbo].[SatTarget]  WITH NOCHECK ADD  CONSTRAINT [FK__SatTarget__H_Targ__1ED998B2] FOREIGN KEY([H_Target_SQN])
 REFERENCES [dbo].[HubTarget] ([H_Target_SQN])
 GO
-IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatTarget__H_Targ__1ED998B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatWeapon]'))
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatTarget__H_Targ__1ED998B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatTarget]'))
 ALTER TABLE [dbo].[SatTarget] CHECK CONSTRAINT [FK__SatTarget__H_Targ__1ED998B2]
 GO
 ---------
@@ -156,7 +156,7 @@ IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo
 ALTER TABLE [dbo].[SatNational]  WITH NOCHECK ADD  CONSTRAINT [FK__SatNationality__H_Nat__2ED798B2] FOREIGN KEY([H_National_SQN])
 REFERENCES [dbo].[HubNationality] ([H_National_SQN])
 GO
-IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatNationality__H_Nat__2ED798B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatWeapon]'))
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatNationality__H_Nat__2ED798B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatNational]'))
 ALTER TABLE [dbo].[SatNational] CHECK CONSTRAINT [FK__SatNationality__H_Nat__2ED798B2]
 GO
 -------
@@ -183,11 +183,14 @@ PRIMARY KEY CLUSTERED
 END
 
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__LinkTargetNat__H_Nat__267ABA7A]') AND parent_object_id = OBJECT_ID(N'[dbo].[LinkTargetNationality]'))
-ALTER TABLE [dbo].[LinkTargetNationality]  WITH NOCHECK ADD FOREIGN KEY([H_National_SQN])
+ALTER TABLE [dbo].[LinkTargetNationality]  WITH NOCHECK ADD CONSTRAINT [FK__LinkTargetNat__H_Nat__267ABA7A] FOREIGN KEY([H_National_SQN])
 REFERENCES [dbo].[HubNationality] ([H_National_SQN])
 GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__LinkTargetNat__H_Nat__267ABA7A]') AND parent_object_id = OBJECT_ID(N'[dbo].[LinkTargetNationality]'))
+ALTER TABLE [dbo].[LinkTargetNationality] CHECK CONSTRAINT [FK__LinkTargetNat__H_Nat__267ABA7A]
+GO
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__LinkTargetNat__H_Trg__25869641]') AND parent_object_id = OBJECT_ID(N'[dbo].[LinkTargetNationality]'))
-ALTER TABLE [dbo].[LinkTargetNationality]  WITH NOCHECK ADD  CONSTRAINT [FK__LinkTargetNat__H_Trg__25869641] FOREIGN KEY([H_Target_SQN])
+ALTER TABLE [dbo].[LinkTargetNationality]  WITH NOCHECK ADD CONSTRAINT [FK__LinkTargetNat__H_Trg__25869641] FOREIGN KEY([H_Target_SQN])
 REFERENCES [dbo].[HubTarget] ([H_Target_SQN])
 GO
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__LinkTargetNat__H_Trg__25869641]') AND parent_object_id = OBJECT_ID(N'[dbo].[LinkTargetNationality]'))
@@ -244,6 +247,54 @@ IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo
 ALTER TABLE [dbo].[SatGroup]  WITH NOCHECK ADD  CONSTRAINT [FK__SatGroup__H_Nat__3ED798B2] FOREIGN KEY([H_Group_SQN])
 REFERENCES [dbo].[HubGroup] ([H_Group_SQN])
 GO
-IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatGroup__H_Nat__3ED798B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatWeapon]'))
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatGroup__H_Nat__3ED798B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatGroup]'))
 ALTER TABLE [dbo].[SatGroup] CHECK CONSTRAINT [FK__SatGroup__H_Nat__3ED798B2]
 GO
+-- Attack HUB es Satelite
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatAttack__H_Targ__2HD238B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatAttack]'))
+ALTER TABLE [dbo].[SatAttack] DROP CONSTRAINT [FK__SatAttack__H_Targ__2HD238B2]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[HubAttack]') AND type in (N'U'))
+DROP TABLE [dbo].[HubAttack]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[HubAttack]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HubAttack](
+	[H_Attack_SQN] [int] IDENTITY(1,1) NOT NULL,
+	[H_Attack_LDTS] [datetime] NOT NULL,
+	[H_Attack_LEDTS] [datetime] NOT NULL,
+	[H_Attackt_RSRC] [varchar](30) NOT NULL,
+	[codetype_is] [int] NOT NULL,
+ CONSTRAINT [PK__HubAttack__8605ACE0806C05B7] PRIMARY KEY CLUSTERED 
+(
+	[H_Attack_SQN] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SatAttack]') AND type in (N'U'))
+DROP TABLE [dbo].[SatAttack]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SatAttack]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[SatAttack](
+	[H_Attack_SQN] [int] NOT NULL,
+	[S_Attack_LDTS] [datetime] NOT NULL,
+	[S_Attack_LEDTS] [datetime] NOT NULL,
+	[S_Attack_RSRC] [varchar](30) NOT NULL,
+	[S_Attack_TypeName] [varchar](30) NOT NULL
+) ON [PRIMARY]
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatAttack__H_Targ__2HD238B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatAttack]'))
+ALTER TABLE [dbo].[SatAttack]  WITH NOCHECK ADD  CONSTRAINT [FK__SatAttack__H_Targ__2HD238B2] FOREIGN KEY([H_Attack_SQN])
+REFERENCES [dbo].[HubAttack] ([H_Attack_SQN])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK__SatAttack__H_Targ__2HD238B2]') AND parent_object_id = OBJECT_ID(N'[dbo].[SatAttack]'))
+ALTER TABLE [dbo].[SatAttack] CHECK CONSTRAINT [FK__SatAttack__H_Targ__2HD238B2]
+GO
+---------
