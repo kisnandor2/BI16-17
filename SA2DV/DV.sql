@@ -46,14 +46,10 @@ BEGIN
 CREATE TABLE [dbo].[SatWeapon](
 	[H_Weapon_SQN] [int] NOT NULL,
 	[S_Weapon_LDTS] [datetime] NOT NULL,
+	[S_Weapon_LEDTS] [datetime] NOT NULL,
 	[S_Weapon_RSRC] [varchar](30) NOT NULL,
 	[S_Weapon_TypeName] [varchar](30) NOT NULL,
 	[S_Weapon_SubTypeName] [varchar](30) NOT NULL,
- CONSTRAINT [PK_SatWeapon] PRIMARY KEY CLUSTERED 
-(
-	[H_Weapon_SQN] ASC,
-	[S_Weapon_LDTS] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 END
 GO
@@ -80,6 +76,7 @@ BEGIN
 CREATE TABLE [dbo].[HubTarget](
 	[H_Target_SQN] [int] IDENTITY(1,1) NOT NULL,
 	[H_Target_LDTS] [datetime] NOT NULL,
+	[H_Target_LEDTS] [datetime] NOT NULL,
 	[H_Targett_RSRC] [varchar](30) NOT NULL,
 	[codetype_is] [int] NOT NULL,
 	[codesubtype_is] [int] NOT NULL
@@ -99,14 +96,10 @@ BEGIN
 CREATE TABLE [dbo].[SatTarget](
 	[H_Target_SQN] [int] NOT NULL,
 	[S_Target_LDTS] [datetime] NOT NULL,
+	[S_Target_LEDTS] [datetime] NOT NULL,
 	[S_Target_RSRC] [varchar](30) NOT NULL,
 	[S_Target_TypeName] [varchar](30) NOT NULL,
 	[S_Target_SubTypeName] [varchar](30) NOT NULL,
- CONSTRAINT [PK_SatTarget] PRIMARY KEY CLUSTERED 
-(
-	[H_Target_SQN] ASC,
-	[S_Target_LDTS] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 END
 GO
@@ -133,6 +126,7 @@ BEGIN
 CREATE TABLE [dbo].[HubNationality](
 	[H_National_SQN] [int] IDENTITY(1,1) NOT NULL,
 	[H_National_LDTS] [datetime] NOT NULL,
+	[H_National_LEDTS] [datetime] NOT NULL,
 	[H_National_RSRC] [varchar](30) NOT NULL,
 	[codetype_is] [int] NOT NULL,
  CONSTRAINT [PK__HubNationality__9315ACE0806C05B7] PRIMARY KEY CLUSTERED 
@@ -154,11 +148,6 @@ CREATE TABLE [dbo].[SatNational](
 	[S_National_LEDTS] [datetime] NOT NULL,
 	[S_National_RSRC] [varchar](30) NOT NULL,
 	[S_National_Name] [varchar](30) NOT NULL,
- CONSTRAINT [PK_SatNational] PRIMARY KEY CLUSTERED 
-(
-	[H_National_SQN] ASC,
-	[S_National_LDTS] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 END
 GO
@@ -219,6 +208,7 @@ BEGIN
 CREATE TABLE [dbo].[HubGroup](
 	[H_Group_SQN] [int] IDENTITY(1,1) NOT NULL,
 	[H_Group_LDTS] [datetime] NOT NULL,
+	[H_Group_LDETS] [datetime] NOT NULL,
 	[H_Group_RSRC] [varchar](30) NOT NULL,
 	[code_group] [int] NOT NULL,
  CONSTRAINT [PK__HubGroup__9315ACE0806C05B7] PRIMARY KEY CLUSTERED 
