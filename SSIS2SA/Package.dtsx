@@ -11,11 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{9C5F77E5-D5DB-4EF3-872C-D17F8F57E07B}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{D3336C76-4778-4B42-A65F-3662A0F05009}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{BF002BD0-C3F7-4942-87B5-F35064E74634}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\kisna\Documents\Visual Studio 2015\Projects\SSIS2SA\globalterrorismdb_0616dist.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.SA]"
       DTS:CreationName="OLEDB"
@@ -145,6 +155,7 @@
               description="Excel Source"
               name="Excel Source"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -181,8 +192,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="{71EEEE31-6BE4-4896-A50F-E9EA78A2C7A3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -303,6 +314,15 @@
                       length="255"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[provstate]"
                       name="provstate"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[cityID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[cityID]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[cityID]"
+                      name="cityID"
                       truncationRowDisposition="IgnoreFailure" />
                     <outputColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[city]"
@@ -746,6 +766,15 @@
                       length="255"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[natlty3_txt]"
                       name="natlty3_txt"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[gnameID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[gnameID]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[gnameID]"
+                      name="gnameID"
                       truncationRowDisposition="IgnoreFailure" />
                     <outputColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[gname]"
@@ -1512,6 +1541,15 @@
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[related]"
                       name="related"
                       truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[F140]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F140]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[F140]"
+                      name="F140"
+                      truncationRowDisposition="IgnoreFailure" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1568,6 +1606,10 @@
                       dataType="wstr"
                       length="255"
                       name="provstate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[cityID]"
+                      dataType="r8"
+                      name="cityID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[city]"
                       dataType="wstr"
@@ -1781,6 +1823,10 @@
                       dataType="wstr"
                       length="255"
                       name="natlty3_txt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[gnameID]"
+                      dataType="r8"
+                      name="gnameID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[gname]"
                       dataType="wstr"
@@ -2151,6 +2197,10 @@
                       dataType="wstr"
                       length="255"
                       name="related" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F140]"
+                      dataType="r8"
+                      name="F140" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2223,6 +2273,11 @@
                       length="255"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[provstate]"
                       name="provstate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[cityID]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[cityID]"
+                      name="cityID" />
                     <outputColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[city]"
                       dataType="wstr"
@@ -2482,6 +2537,11 @@
                       length="255"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[natlty3_txt]"
                       name="natlty3_txt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[gnameID]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[gnameID]"
+                      name="gnameID" />
                     <outputColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[gname]"
                       dataType="wstr"
@@ -2931,6 +2991,11 @@
                       length="255"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[related]"
                       name="related" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[F140]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[F140]"
+                      name="F140" />
                     <outputColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -3949,6 +4014,18 @@
                       cachedName="SAID"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SAID]"
                       lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[SAID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cityID]"
+                      cachedDataType="r8"
+                      cachedName="cityID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cityID]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[cityID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gnameID]"
+                      cachedDataType="r8"
+                      cachedName="gnameID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gnameID]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[gnameID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4649,6 +4726,16 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SAID]"
                       dataType="i4"
                       name="SAID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cityID]"
+                      dataType="wstr"
+                      length="512"
+                      name="cityID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gnameID]"
+                      dataType="wstr"
+                      length="512"
+                      name="gnameID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5663,22 +5750,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="54,288" />
+          TopLeft="56,347" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="176,92" />
+          TopLeft="178,151" />
         <NodeLayout
           Size="163,42"
           Id="Package\Data Flow Task\Script Component"
-          TopLeft="112,181" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Data Flow Task\Excel Source"
-          TopLeft="233,8" />
+          TopLeft="114,240" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output 0]"
-          TopLeft="193.5,223">
+          TopLeft="195.5,282">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5711,42 +5794,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="302.5,50">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-49.5,42"
-              Start="0,0"
-              End="-49.5,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17"
-                    Point2="0,21"
-                    Point3="-4,21" />
-                  <mssgle:LineSegment
-                    End="-45.5,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-45.5,21"
-                    Point2="-49.5,21"
-                    Point3="-49.5,25" />
-                  <mssgle:LineSegment
-                    End="-49.5,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="253,134">
+          TopLeft="255,193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5770,6 +5819,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     Point3="-59.5,27.5" />
                   <mssgle:LineSegment
                     End="-59.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Data Flow Task\Excel Source"
+          TopLeft="269,42" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="338.5,84">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.5,67"
+              Start="0,0"
+              End="-83.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-79.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.5,33.5"
+                    Point2="-83.5,33.5"
+                    Point3="-83.5,37.5" />
+                  <mssgle:LineSegment
+                    End="-83.5,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
