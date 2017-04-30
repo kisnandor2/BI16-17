@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SA2DV</Name>
-    <LastWriteTime>2017-04-30T14:29:24.6684797Z</LastWriteTime>
+    <LastWriteTime>2017-04-30T17:11:23.0612914Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -28,7 +28,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SatRegion.dtsx</Name>
-      <LastWriteTime>2017-04-30T14:27:03.5457946Z</LastWriteTime>
+      <LastWriteTime>2017-04-30T14:37:15.805907Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Hub_SatCity.dtsx</Name>
+      <LastWriteTime>2017-04-30T16:51:02.6779375Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LinkCountry_City.dtsx</Name>
+      <LastWriteTime>2017-04-30T17:27:37.5181841Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
