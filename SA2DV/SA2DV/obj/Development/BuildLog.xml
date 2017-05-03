@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SA2DV</Name>
-    <LastWriteTime>2017-05-02T15:00:13.8218257Z</LastWriteTime>
+    <LastWriteTime>2017-05-03T10:33:55.4497115Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -73,7 +73,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LinkWeaponType_Subtype.dtsx</Name>
-      <LastWriteTime>2017-05-02T15:01:05.34529Z</LastWriteTime>
+      <LastWriteTime>2017-05-02T15:01:28.2051621Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Hub_SatGroup.dtsx</Name>
+      <LastWriteTime>2017-05-03T10:40:48.7992808Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
