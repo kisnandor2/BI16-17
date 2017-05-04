@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-E31R91M\Andor"
   DTS:DTSID="{24A94B41-47D1-4BF7-9878-BB722D62C5C1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="13.0.1400.361"
   DTS:LocaleID="1033"
   DTS:ObjectName="LinkTargetType_Subtype"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{14621952-1A03-4FBD-B4FC-9D40657E6787}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E76AC9A1-9D62-444E-A938-3FA5499BDDC7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2056,10 +2056,6 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="35,36" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Data Flow Task\Conditional Split"
-          TopLeft="198,0" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="284,212" />
@@ -2194,64 +2190,6 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="110,36">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="88,-15"
-              Start="0,0"
-              End="80.5,-15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-11" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-11"
-                    Point2="0,-15"
-                    Point3="4,-15" />
-                  <mssgle:LineSegment
-                    End="80.5,-15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[NotNullOutput]"
-          TopLeft="353,14.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81.5,22.5"
-              Start="0,0"
-              End="81.5,15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="77.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.5,0"
-                    Point2="81.5,0"
-                    Point3="81.5,4" />
-                  <mssgle:LineSegment
-                    End="81.5,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="49.51361328125,-17.609375,63.9727734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
           TopLeft="211,225">
           <EdgeLayout.Curve>
@@ -2283,7 +2221,7 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.30638671875,9,111.6127734375,11.609375"
+              BoundingBox="-6.30638671875,1,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2319,8 +2257,70 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-56.69138671875,24,96.3827734375,11.609375"
+              BoundingBox="-39.19138671875,102.5,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="198,0" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[NotNullOutput]"
+          TopLeft="353,14.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.5,22.5"
+              Start="0,0"
+              End="81.5,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.5,0"
+                    Point2="81.5,0"
+                    Point3="81.5,4" />
+                  <mssgle:LineSegment
+                    End="81.5,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="49.51361328125,-17.609375,63.9727734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="110,36">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88,-15"
+              Start="0,0"
+              End="80.5,-15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-11"
+                    Point2="0,-15"
+                    Point3="4,-15" />
+                  <mssgle:LineSegment
+                    End="80.5,-15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2332,7 +2332,7 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2342,7 +2342,7 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2404,7 +2404,7 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2414,7 +2414,7 @@ where [refTable].[H_TargetType_SQN] = ? and [refTable].[H_TargetSubType_SQN] = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

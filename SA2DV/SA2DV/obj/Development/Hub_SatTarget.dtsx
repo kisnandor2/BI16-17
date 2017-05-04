@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/30/2017 5:39:54 PM"
+  DTS:CreationDate="5/4/2017 10:52:16 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-M8CH1V1"
   DTS:CreatorName="DESKTOP-M8CH1V1\kisna"
-  DTS:DTSID="{A6DB62E0-CE66-437D-9BD2-B0850958FA80}"
+  DTS:DTSID="{63ACB8E1-F031-429D-955F-9B20DE625C8C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.1400.361"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Hub_SatCity"
+  DTS:ObjectName="Hub_SatTarget"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{EDC9BA97-C724-40CD-8284-B41987422A9B}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{4673A1D1-2F3F-47AC-97C8-883CC0BAAB06}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{D5D1A4B3-8868-4D49-BA5E-9E76B8C2880A}"
+      DTS:DTSID="{3F3796D8-BAC7-4801-BD7D-3F4211D29F12}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task">
@@ -134,12 +134,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_Target_SQN]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_City_SQN]"
-                      name="H_City_SQN"
+                      lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_Target_SQN]"
+                      name="H_Target_SQN"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -184,11 +184,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Add H_City_SQN"
+              refId="Package\Data Flow Task\Add H_Target_SQN"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;10"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
-              name="Add H_City_SQN"
+              name="Add H_Target_SQN"
               version="10">
               <properties>
                 <property
@@ -204,92 +204,7 @@
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c686f818-82aa-464b-89a4-666c9bd7c8f8}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_b933ccd8492549a594cb0ebb3a491941</RootNamespace>
-    <AssemblyName>SC_b933ccd8492549a594cb0ebb3a491941</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Compile Include="main.cs" />
-    <Compile Include="BufferWrapper.cs" />
-    <Compile Include="ComponentWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_b933ccd8492549a594cb0ebb3a491941" IconIndex="0"></Host>
-        <ProjectClient>
-          <HostIdentifier>SSIS_SC130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></arrayElement>
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{c686f818-82aa-464b-89a4-666c9bd7c8f8}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_b933ccd8492549a594cb0ebb3a491941</RootNamespace><AssemblyName>SC_0DE39723E895417CB85BCAB43DE20BE0</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptComponent" GeneratedNamespace="SC_b933ccd8492549a594cb0ebb3a491941" IconIndex="0"></Host><ProjectClient><HostIdentifier>SSIS_SC130</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
                     <arrayElement
@@ -496,7 +411,7 @@ public class ScriptMain : UserComponent
      */
     #endregion
 
-    int H_City_SQN;
+    int H_Target_SQN;
 
     /// <summary>
     /// This method is called once, before rows begin to be processed in the data flow.
@@ -506,10 +421,10 @@ public class ScriptMain : UserComponent
     public override void PreExecute()
     {
         base.PreExecute();
-        H_City_SQN = 0;
+        H_Target_SQN = 0;
         SqlConnection conn = (SqlConnection)Connections.adonet.AcquireConnection(null);
         SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "SELECT MAX(H_City_SQN) FROM HubCity";
+        cmd.CommandText = "SELECT MAX(H_Target_SQN) FROM HubTarget";
         cmd.CommandType = CommandType.Text;
         cmd.Connection = conn;
 
@@ -520,11 +435,11 @@ public class ScriptMain : UserComponent
         {
             try
             {
-                H_City_SQN = reader.GetInt32(0); //get max H_City_SQN
+                H_Target_SQN = reader.GetInt32(0); //get max H_Target_SQN
             }
             catch (Exception e)
             {
-                H_City_SQN = 0;
+                H_Target_SQN = 0;
             }
             break;
         }
@@ -556,7 +471,7 @@ public class ScriptMain : UserComponent
     /// <param name="Row">The row that is currently passing through the component</param>
     public override void Input0_ProcessInputRow(Input0Buffer Row)
     {
-        Row.HCitySQN = ++H_City_SQN;
+        Row.HTargetSQN = ++H_Target_SQN;
     }
 
 }
@@ -586,7 +501,7 @@ public class Input0Buffer: ScriptBuffer
     {
     }
 
-    public Int32 HCitySQN
+    public Int32 HTargetSQN
     {
         get
         {
@@ -597,7 +512,7 @@ public class Input0Buffer: ScriptBuffer
             this[0] = value;
         }
     }
-    public bool HCitySQN_IsNull
+    public bool HTargetSQN_IsNull
     {
         get
         {
@@ -613,21 +528,6 @@ public class Input0Buffer: ScriptBuffer
             {
                 throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
             }
-        }
-    }
-
-    public String Copyofcity
-    {
-        get
-        {
-            return Buffer.GetString(BufferColumnIndexes[1]);
-        }
-    }
-    public bool Copyofcity_IsNull
-    {
-        get
-        {
-            return IsNull(1);
         }
     }
 
@@ -764,20 +664,20 @@ public class Variables
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
 		<msb:CodeName>SC_b933ccd8492549a594cb0ebb3a491941</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
 		<msb:DisplayName>SC_b933ccd8492549a594cb0ebb3a491941</msb:DisplayName>
 		<msb:ProjectId>{A1592240-534F-4965-9F73-18D251E7D711}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_b933ccd8492549a594cb0ebb3a491941.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="BufferWrapper.cs"/>
-		<msb:File Include="main.cs"/>
 		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -910,120 +810,120 @@ namespace SC_b933ccd8492549a594cb0ebb3a491941.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_b933ccd8492549a594cb0ebb3a491941.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_0DE39723E895417CB85BCAB43DE20BE0.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[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
-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
+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
-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
+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
-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
+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
-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
+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
-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
+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
-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
-ArAEBgCTArcDCgA8A3ABDgAQBdsHDgDUBdsHBgAuBWgECgAMBnABEgD9BXABCgBoBXABCgAPCHAB
-BgCxB2gEFgBWAEMGBgAXAqEGBgAdBtQGBgBcBZsEGgDnAdsDGgBIAtsDGgDJAYYEBgD8AbQGDgAM
-AdsHDgACATgFDgCVAdIADgDHBTgFDgDxBDgFBgCWAGgEBgAeBWgEBgDUA2gEBgBLBWgEHgABAGsG
-HgAaAGsGHgA9AGsGBgCcAWgEBgAnAWgEBgCkCLAEAAAAAJwAAAAAAAEAAQABABAAewQAABAAAQAB
-AAEAEADwBQAARQACAAUAAQAQAPEHAABRAAIADgABABAApQcAAFUABAASAAEAEABmBwAAVQAFABQA
-AAAQANsGNwdVAAYAFQAAARAAlQc3B3EACAAZAAEArQC3AAYApQe6AAYAZge+AAEA/wfCAAEA/wfC
-ABEAbwTGABEAuQHKABEAFwHOAFAgAAAAAMYAmgMGAAEA4CAAAAAAxgClAwYAAQDoIAAAAADGAIEI
-0gABAAwhAAAAAIYYlAYGAAIAFCEAAAAAhhiUBkYAAgAfIQAAAACGCLgA2AAFADQhAAAAAIYIxQAB
-AAUAQyEAAAAAhggZBD4ABgBMIQAAAACGCC0E3AAGAGMhAAAAAIYIrQjhAAcAeCEAAAAAhghBBD4A
-BwCBIQAAAACGAJgIPgAHAIkhAAAAAIYAwwc+AAcAkSEAAAAAhhiUBgYABwCxIQAAAADGAGQI5QAH
-ANYhAAAAAMYBXQjSAAsA6SEAAAAAxgGBCNIADADrIQAAAACGGJQG7wANAPohAAAAAIYIuAeJAA4A
-GyIAAAAAhhiUBu8ADgAqIgAAAACDGJQGBgAPADIiAAAAAJMIGQb1AA8AXiIAAAAAkwihAfoADwBl
-IgAAAACTCK0B/wAPAG0iAAAAAJYIzwcFARAAdCIAAAAAhhiUBgYAEAB8IgAAAACRGJoGCgEQAAAA
-AQCcCAAAAQASBgAAAgBwBwAAAwB2BQAAAQCxAwAAAQCxAwAAAQClAAAAAgBLAQAAAwASBgAABAB2
-BQAAAQASBgAAAQCcCAAAAQAVCAAAAQAVCAAAAQCxAwkAlAYBABEAlAYGABkAlAYKACkAlAYQADEA
-lAYQADkAlAYQAEEAlAYQAEkAlAYQAFEAlAYQAFkAlAYQAGEAlAYQAGkAlAYGALkAlAYGANkAlAYV
-AOkAlAYGAKEAmgMGALEA/gQiAPEAlAYGAPkAcQgQAPkAkQEnAPEA4gQuAPEA4gU0AAkBkwA5AAkB
-/QA+ABEB4QEGAKEApQMGAIkAlAZGAIkAEgZQAIkAcAdUAJEAkwA5AIkAXwRYAIkAUAReAIkAVwQB
-ACEBlAYQAJEA0QNjAIkAmAg+AIkAwwc+AKEAlAYGACkBngdoAKEAhAdwAKkAlAYGAKEA3gB2ADkB
-wgR8AEEBVQGCAEkBLQaJAFEBOQGOAFEBoAiXAMEAlAadAOEAlAYGAC4ACwAuAS4AEwA3AS4AGwBW
-AS4AIwBfAS4AKwCIAS4AMwCIAS4AOwCIAS4AQwBfAS4ASwCOAS4AUwCIAS4AWwClAUMAYwDvAckA
-cwBWAeMAawDvAekAcwBWAQEBewDvARsAQgADAAEABQAFAAcABgAIAAgAAADJAA4BAAAxBBIBAACx
-CBYBAABFBBIBAAC8BxoBAAAdBh8BAADBASQBAADTBykBAgAGAAMAAQAHAAMAAgAIAAUAAQAJAAUA
-AgAKAAcAAgALAAkAAgATAAsAAgAWAA0AAgAXAA8AAQAYAA8AAgAZABEABIAAAAEAAAAAAAAAAAAA
-AAAAbwAAAAQAAAAAAAAAAAAAAKUA9AAAAAAADQAAAAAAAAAAAAAArgAfCAAAAAAEAAAAAAAAAAAA
-AAClANIAAAAAAA0AAAAAAAAAAAAAAK4APAgAAAAADQAAAAAAAAAAAAAArgCABQAAAAAEAAAAAAAA
-AAAAAAClAGgEAAAAAA0AAAAAAAAAAAAAAK4AowUAAAAAAAAAAAEAAADlBgAAAAAAAABJRFRTQ29t
-cG9uZW50TWV0YURhdGExMDAASURUU1J1bnRpbWVDb25uZWN0aW9uQ29sbGVjdGlvbjEwMABJRFRT
-UnVudGltZUNvbm5lY3Rpb24xMDAASURUU0Nvbm5lY3Rpb25NYW5hZ2VyMTAwAFNDX2I5MzNjY2Q4
-NDkyNTQ5YTU5NGNiMGViYjNhNDkxOTQxAEdldEludDMyADxNb2R1bGU+AElucHV0SUQASF9DaXR5
-X1NRTgBnZXRfSENpdHlTUU4Ac2V0X0hDaXR5U1FOAFN5c3RlbS5EYXRhAGdldF9Db21wb25lbnRN
-ZXRhRGF0YQBtc2NvcmxpYgBSZWFkAERiQ29tbWFuZABTcWxDb21tYW5kAGRlZmF1bHRJbnN0YW5j
-ZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUAR2V0UnVudGlt
-ZUNvbm5lY3Rpb25CeU5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAc2V0X0Nv
-bW1hbmRUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNh
-dGlvblNldHRpbmdzQmFzZQBDbG9zZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVy
-YXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRy
-aWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNz
-ZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5
-Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBp
-bGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2Vt
-Ymx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmli
-dXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0
-ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAHZhbHVlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcA
-R2V0U3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ19iOTMzY2NkODQ5MjU0OWE1OTRjYjBl
-YmIzYTQ5MTk0MS5kbGwAZ2V0X0hDaXR5U1FOX0lzTnVsbABzZXRfSENpdHlTUU5fSXNOdWxsAGdl
-dF9Db3B5b2ZjaXR5X0lzTnVsbABTZXROdWxsAHNldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBT
-Y3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3Rl
-bS5SZWZsZWN0aW9uAGdldF9SdW50aW1lQ29ubmVjdGlvbkNvbGxlY3Rpb24Ac2V0X0Nvbm5lY3Rp
-b24ARGJDb25uZWN0aW9uAEFjcXVpcmVDb25uZWN0aW9uAFNxbENvbm5lY3Rpb24ASW52YWxpZE9w
-ZXJhdGlvbkV4Y2VwdGlvbgBTeXN0ZW0uRGF0YS5Db21tb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0
-dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1J1
-bnRpbWVXcmFwAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRFRTUGlwZWxpbmVXcmFwAERiRGF0YVJlYWRl
-cgBTcWxEYXRhUmVhZGVyAEV4ZWN1dGVSZWFkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVmZmVy
-AFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAGdldF9Db25uZWN0aW9uTWFuYWdlcgBN
-aWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lLldyYXBwZXIATWljcm9zb2Z0LlNxbFNlcnZl
-ci5EdHMuUGlwZWxpbmUuV3JhcHBlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5
-c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ19iOTMzY2Nk
-ODQ5MjU0OWE1OTRjYjBlYmIzYTQ5MTk0MS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMA
-RGVidWdnaW5nTW9kZXMAU0NfYjkzM2NjZDg0OTI1NDlhNTk0Y2IwZWJiM2E0OTE5NDEuUHJvcGVy
-dGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNldHRp
-bmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QAZ2V0X2Fkb25ldABFbmRPZlJvd3NldABnZXRf
-RGVmYXVsdABTeXN0ZW0uRGF0YS5TcWxDbGllbnQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25l
-bnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0
-LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABzZXRfQ29tbWFuZFRl
-eHQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AGdldF9Bc3NlbWJseQBnZXRfQ29weW9m
-Y2l0eQAAR1MARQBMAEUAQwBUACAATQBBAFgAKABIAF8AQwBpAHQAeQBfAFMAUQBOACkAIABGAFIA
-TwBNACAASAB1AGIAQwBpAHQAeQAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMA
-YQBuAG4AbwB0ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBu
-ACAAYQAgAHYAYQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUA
-YQBkAC4AAA9JAG4AcAB1AHQAIAAwAAANYQBkAG8AbgBlAHQAAHFTAEMAXwBiADkAMwAzAGMAYwBk
-ADgANAA5ADIANQA0ADkAYQA1ADkANABjAGIAMABlAGIAYgAzAGEANAA5ADEAOQA0ADEALgBQAHIA
-bwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAjkk73gJ2qEitzG7WAraMTgAE
-IAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQYHAhI5Ej0EIAEcHAYgAQERgIEFIAEBEjkEIAASPQQg
-AQgIAyAAAgMHAQgJIAMBEkkdCBJNAwYSSQMGHQgFIAIBCBwEIAECCAQgAQ4IByACAg4RgJkFIAEd
-CAgFIAASgJ0FIAASgKEGIAESgKUOBCAAElkIAAESgKkRgK0FIAASgLEHIAIBDhKAsQi3elxWGTTg
-iQiJhF3NgIDMkQIGCAMGEhQDBhIYAwYSUQMGEmEDBhJlAwYSIAUgAQESDAMgAAgEIAEBAgMgAA4J
-IAQBCA4SSRJNBSABARJRBAAAEmEEAAASZQUAAQESZQQAABIgAwAAAQMoAAgDKAACAygADgQoABJZ
-BAgAEmEECAASZQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgB
-AAIAAAAAACgBACNTQ19iOTMzY2NkODQ5MjU0OWE1OTRjYjBlYmIzYTQ5MTk0MQAABQEAAAAAFgEA
-EUNvcHlyaWdodCBAICAyMDE3AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQOFEZy
-YW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQQBAAAAtAAAAM7K774BAAAAkQAA
-AGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAu
-MC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lz
-dGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAKQ2
-AAAAAAAAAAAAAL42AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwNgAAAAAAAAAAAAAAAF9Db3JE
-bGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+KnJRAABwcyIAAAp6HgIoIwAACioeAigkAAAKKn4CKCUAAAoCAnMQAAAGfQIAAAQCAnMSAAAGfQMA
+AAQqkgRy7gAAcBpvJgAACiwVAgUCAygnAAAKDgRzBQAABm8OAAAGKkorBwIDbw8AAAYDbwoAAAYt
+8SoGKjoCKCgAAAoCA30EAAAEKoICewQAAARvKQAACm8qAAAKcv4AAHBvKwAACm8sAAAKKjoCKCgA
+AAoCA30FAAAEKh4CKCgAAAoqrn4GAAAELR5yDAEAcNAHAAACKC0AAApvLgAACnMvAAAKgAYAAAR+
+BgAABCoafgcAAAQqHgKABwAABCoafggAAAQqHgIoMAAACioucxgAAAaACAAABCoAAEJTSkIBAAEA
+AAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAFwGAAAjfgAAyAYAAKAIAAAjU3RyaW5ncwAAAABo
+DwAAgAEAACNVUwDoEAAAEAAAACNHVUlEAAAA+BAAAOgBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkB
+AAAA+gEzABYAAAEAAAAsAAAACAAAAAgAAAAZAAAADwAAADAAAAAQAAAAAgAAAAQAAAAGAAAACQAA
+AAEAAAAHAAAAAQAAAAAA9AMBAAAAAAAGAO4CpQYGAIIDpQYGADoCkgYPABkHAAAGAGcCoQQGANEC
+oQQGALICoQQGAGkDoQQGAA4DoQQGACcDoQQGAH4CoQQGAJkCvQMKAEIDdgEOAAEFzAcOAMUFzAcG
+AB8FWQQKAP0FdgESAO4FdgEKAFkFdgEKAAAIdgEGAKIHWQQWAFYANAYGAB0CkgYGAA4GxQYGAE0F
+jAQaAO0B3gMaAE4C3gMaAM8BdwQGAAICpQYOABIBzAcOAAgBKQUOAJsB2AAOALgFKQUOAOIEKQUG
+AJYAWQQGAA8FWQQGANcDWQQGADwFWQQeAAEAXAYeABoAXAYeAD0AXAYGAKIBWQQGAC0BWQQGAJUI
+oQQAAAAAnAAAAAAAAQABAAEAEABsBAAAEAABAAEAAQAQAOEFAABFAAIABQABABAA4gcAAFEAAgAM
+AAEAEACWBwAAVQAEABAAAQAQAFcHAABVAAUAEgAAABAAzAYoB1UABgATAAABEACGBygHcQAIABcA
+AQCtALIABgCWB7UABgBXB7kAAQDwB70AAQDwB70AEQBgBMEAEQC/AcUAEQAdAckAUCAAAAAAxgCg
+AwYAAQDgIAAAAADGAKsDBgABAOggAAAAAMYAcgjNAAEADCEAAAAAhhiFBgYAAgAUIQAAAACGGIUG
+RgACAB8hAAAAAIYIugDTAAUANCEAAAAAhgjJAAEABQBDIQAAAACGCBwEPgAGAEwhAAAAAIYIMgTX
+AAYAYyEAAAAAhgCJCD4ABwBrIQAAAACGALQHPgAHAHMhAAAAAIYYhQYGAAcAkyEAAAAAxgBVCNwA
+BwC4IQAAAADGAU4IzQALAMshAAAAAMYBcgjNAAwAzSEAAAAAhhiFBuYADQDcIQAAAACGCKkHhAAO
+AP0hAAAAAIYYhQbmAA4ADCIAAAAAgxiFBgYADwAUIgAAAACTCAoG7AAPAEAiAAAAAJMIpwHxAA8A
+RyIAAAAAkwizAfYADwBPIgAAAACWCMAH/AAQAFYiAAAAAIYYhQYGABAAXiIAAAAAkRiLBgEBEAAA
+AAEAjQgAAAEAAwYAAAIAYQcAAAMAZwUAAAEAtwMAAAEAtwMAAAEApQAAAAIAUQEAAAMAAwYAAAQA
+ZwUAAAEAAwYAAAEAjQgAAAEABggAAAEABggAAAEAtwMJAIUGAQARAIUGBgAZAIUGCgApAIUGEAAx
+AIUGEAA5AIUGEABBAIUGEABJAIUGEABRAIUGEABZAIUGEABhAIUGEABpAIUGBgC5AIUGBgDZAIUG
+FQDpAIUGBgChAKADBgCxAO8EIgDxAIUGBgD5AGIIEAD5AJcBJwDxANMELgDxANMFNAAJAZMAOQAJ
+AQMBPgARAecBBgChAKsDBgCJAIUGRgCJAAMGUACJAGEHVACRAJMAOQCJAFAEWACJAEEEXgCJAEgE
+AQAhAYUGEACJAIkIPgCJALQHPgChAIUGBgApAY8HYwChAHUHawCpAIUGBgChAOQAcQA5AbMEdwBB
+AVsBfQBJAR4GhABRAT8BiQBRAZEIkgDBAIUGmADhAIUGBgAuAAsAIQEuABMAKgEuABsASQEuACMA
+UgEuACsAewEuADMAewEuADsAewEuAEMAUgEuAEsAgQEuAFMAewEuAFsAmAFDAGMA4gGJAHMASQGp
+AHMASQHjAGsA4gEBAXsA4gEbAEIAAwABAAUAAwAHAAQACAAGAAAAzQAFAQAANgQJAQAArQcNAQAA
+DgYSAQAAxwEXAQAAxAccAQIABgADAAEABwADAAIACAAFAAEACQAFAAIAEQAHAAIAFAAJAAIAFQAL
+AAEAFgALAAIAFwANAASAAAABAAAAAAAAAAAAAAAAAG8AAAAEAAAAAAAAAAAAAACgAPoAAAAAAA0A
+AAAAAAAAAAAAAKkAEAgAAAAABAAAAAAAAAAAAAAAoADYAAAAAAANAAAAAAAAAAAAAACpAC0IAAAA
+AA0AAAAAAAAAAAAAAKkAcQUAAAAABAAAAAAAAAAAAAAAoABZBAAAAAANAAAAAAAAAAAAAACpAJQF
+AAAAAAAAAAABAAAA1gYAAAAAAElEVFNDb21wb25lbnRNZXRhRGF0YTEwMABJRFRTUnVudGltZUNv
+bm5lY3Rpb25Db2xsZWN0aW9uMTAwAElEVFNSdW50aW1lQ29ubmVjdGlvbjEwMABJRFRTQ29ubmVj
+dGlvbk1hbmFnZXIxMDAAU0NfMERFMzk3MjNFODk1NDE3Q0I4NUJDQUI0M0RFMjBCRTAAR2V0SW50
+MzIAPE1vZHVsZT4ASW5wdXRJRABIX1RhcmdldF9TUU4AZ2V0X0hUYXJnZXRTUU4Ac2V0X0hUYXJn
+ZXRTUU4AU3lzdGVtLkRhdGEAZ2V0X0NvbXBvbmVudE1ldGFEYXRhAG1zY29ybGliAFJlYWQARGJD
+b21tYW5kAFNxbENvbW1hbmQAZGVmYXVsdEluc3RhbmNlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5
+cGVGcm9tSGFuZGxlAElucHV0TmFtZQBHZXRSdW50aW1lQ29ubmVjdGlvbkJ5TmFtZQBNaWNyb3Nv
+ZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBzZXRfQ29tbWFuZFR5cGUAZ2V0X0N1bHR1cmUAc2V0
+X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAENsb3NlAEVk
+aXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9u
+VXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRy
+aWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBU
+YXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFz
+c2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0
+ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJ
+U1NjcmlwdENvbXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmli
+dXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUA
+dmFsdWUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBTdHJpbmcAU3lzdGVtLkNvbXBvbmVudE1v
+ZGVsAFNDXzBERTM5NzIzRTg5NTQxN0NCODVCQ0FCNDNERTIwQkUwLmRsbABnZXRfSFRhcmdldFNR
+Tl9Jc051bGwAc2V0X0hUYXJnZXRTUU5fSXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAHJl
+c291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6
+YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AZ2V0X1J1bnRpbWVDb25uZWN0aW9uQ29sbGVjdGlvbgBz
+ZXRfQ29ubmVjdGlvbgBEYkNvbm5lY3Rpb24AQWNxdWlyZUNvbm5lY3Rpb24AU3FsQ29ubmVjdGlv
+bgBJbnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAFN5c3RlbS5EYXRhLkNvbW1vbgBTdHJpbmdDb21w
+YXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAE1pY3Jvc29mdC5TcWxT
+ZXJ2ZXIuRFRTUnVudGltZVdyYXAATWljcm9zb2Z0LlNxbFNlcnZlci5EVFNQaXBlbGluZVdyYXAA
+RGJEYXRhUmVhZGVyAFNxbERhdGFSZWFkZXIARXhlY3V0ZVJlYWRlcgBJbnB1dDBCdWZmZXIAUGlw
+ZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIAZ2V0X0Nvbm5lY3Rp
+b25NYW5hZ2VyAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUuV3JhcHBlcgBNaWNyb3Nv
+ZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZS5XcmFwcGVyAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlh
+Z25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2Vz
+AFNDX2I5MzNjY2Q4NDkyNTQ5YTU5NGNiMGViYjNhNDkxOTQxLlByb3BlcnRpZXMuUmVzb3VyY2Vz
+LnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ19iOTMzY2NkODQ5MjU0OWE1OTRjYjBlYmIzYTQ5
+MTk0MS5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbklu
+ZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAE9iamVjdABnZXRfYWRvbmV0AEVuZE9m
+Um93c2V0AGdldF9EZWZhdWx0AFN5c3RlbS5EYXRhLlNxbENsaWVudABVc2VyQ29tcG9uZW50AFBh
+cmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlw
+dABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AHNl
+dF9Db21tYW5kVGV4dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAZ2V0X0Fzc2VtYmx5
+AAAAAE9TAEUATABFAEMAVAAgAE0AQQBYACgASABfAFQAYQByAGcAZQB0AF8AUwBRAE4AKQAgAEYA
+UgBPAE0AIABIAHUAYgBUAGEAcgBnAGUAdAAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQA
+eQAgAGMAYQBuAG4AbwB0ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBz
+AGkAZwBuACAAYQAgAHYAYQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4A
+cwB0AGUAYQBkAC4AAA9JAG4AcAB1AHQAIAAwAAANYQBkAG8AbgBlAHQAAHFTAEMAXwBiADkAMwAz
+AGMAYwBkADgANAA5ADIANQA0ADkAYQA1ADkANABjAGIAMABlAGIAYgAzAGEANAA5ADEAOQA0ADEA
+LgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAASOIhakDtQUGopU5+
+lZpWGgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQYHAhI5Ej0EIAEcHAYgAQERgIEFIAEBEjkE
+IAASPQQgAQgIAyAAAgMHAQgJIAMBEkkdCBJNAwYSSQMGHQgFIAIBCBwEIAECCAcgAgIOEYCZBSAB
+HQgIBSAAEoCdBSAAEoChBiABEoClDgQgABJZCAABEoCpEYCtBSAAEoCxByACAQ4SgLEIt3pcVhk0
+4IkIiYRdzYCAzJECBggDBhIUAwYSGAMGElEDBhJhAwYSZQMGEiAFIAEBEgwDIAAIBCABAQIJIAQB
+CA4SSRJNBSABARJRBAAAEmEEAAASZQUAAQESZQQAABIgAwAAAQMoAAgDKAACBCgAElkECAASYQQI
+ABJlBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAA
+KAEAI1NDX2I5MzNjY2Q4NDkyNTQ5YTU5NGNiMGViYjNhNDkxOTQxAAAFAQAAAAAWAQARQ29weXJp
+Z2h0IEAgIDIwMTcAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNQEAVA4URnJhbWV3b3Jr
+RGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC41BAEAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAACw2AAAAAAAA
+AAAAAEY2AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4NgAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1038,13 +938,13 @@ MAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5
 AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAA
 UwBDAF8AYgA5ADMAMwBjAGMAZAA4ADQAOQAyADUANAA5AGEANQA5ADQAYwBiADAAZQBiAGIAMwBh
 ADQAOQAxADkANAAxAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAA
-LgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBiADkAMwAzAGMAYwBk
-ADgANAA5ADIANQA0ADkAYQA1ADkANABjAGIAMABlAGIAYgAzAGEANAA5ADEAOQA0ADEALgBkAGwA
+LgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwAwAEQARQAzADkANwAy
+ADMARQA4ADkANQA0ADEANwBDAEIAOAA1AEIAQwBBAEIANAAzAEQARQAyADAAQgBFADAALgBkAGwA
 bAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0
 ACAAQAAgACAAMgAwADEANwAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAA
-AAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAGIAOQAz
-ADMAYwBjAGQAOAA0ADkAMgA1ADQAOQBhADUAOQA0AGMAYgAwAGUAYgBiADMAYQA0ADkAMQA5ADQA
-MQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwBiADkAMwAz
+AAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADAARABF
+ADMAOQA3ADIAMwBFADgAOQA1ADQAMQA3AEMAQgA4ADUAQgBDAEEAQgA0ADMARABFADIAMABCAEUA
+MAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwBiADkAMwAz
 AGMAYwBkADgANAA5ADIANQA0ADkAYQA1ADkANABjAGIAMABlAGIAYgAzAGEANAA5ADEAOQA0ADEA
 AAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAI
 AAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAA
@@ -1055,7 +955,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAANA2AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAFg2AAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1071,7 +971,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_b933ccd8492549a594cb0ebb3a491941</property>
+                  typeConverter="NOTBROWSABLE">SC_0de39723e895417cb85bcab43de20be0</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -1100,51 +1000,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum"
-                  typeConverter="NOTBROWSABLE">871a80f0ee9ceb3d8ddc18853b4d67e5</property>
+                  typeConverter="NOTBROWSABLE">1c13fa8439ff73e5e3b83d81b2be583e</property>
                 <property
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataShaChecksum"
-                  typeConverter="NOTBROWSABLE">b156490e29dd1854864cbb003aee884511280de8</property>
+                  typeConverter="NOTBROWSABLE">f7fbe8a834eb98049d44c3fff6af6258bd7c34ce</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Add H_City_SQN.Connections[adonet]"
+                  refId="Package\Data Flow Task\Add H_Target_SQN.Connections[adonet]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DV1]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DV1]"
                   name="adonet" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Add H_City_SQN.Inputs[Input 0]"
+                  refId="Package\Data Flow Task\Add H_Target_SQN.Inputs[Input 0]"
                   hasSideEffects="true"
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Add H_City_SQN.Inputs[Input 0].Columns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Add H_Target_SQN.Inputs[Input 0].Columns[H_Target_SQN]"
                       cachedDataType="i4"
-                      cachedName="H_City_SQN"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]"
+                      cachedName="H_Target_SQN"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]"
                       usageType="readWrite" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Add H_City_SQN.Inputs[Input 0].Columns[Copy of city]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Copy of city"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Add H_City_SQN.Outputs[Output 0]"
+                  refId="Package\Data Flow Task\Add H_Target_SQN.Outputs[Output 0]"
                   name="Output 0"
-                  synchronousInputId="Package\Data Flow Task\Add H_City_SQN.Inputs[Input 0]">
+                  synchronousInputId="Package\Data Flow Task\Add H_Target_SQN.Inputs[Input 0]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -1186,11 +1079,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[city]"
+                      refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[target1]"
                       cachedDataType="wstr"
                       cachedLength="512"
-                      cachedName="city"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]" />
+                      cachedName="target1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target1]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1212,17 +1105,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]"
+                      refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[target1]"
                       dataType="wstr"
                       length="512"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]"
-                      name="city">
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[target1]"
+                      name="target1">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]}</property>
+                          name="AggregationColumnId">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target1]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -1257,14 +1150,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SatCity]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SatTarget]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SatCity]) [refTable]
-where [refTable].[CityName] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SatTarget]) [refTable]
+where [refTable].[S_TargetName] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -1295,12 +1188,12 @@ where [refTable].[CityName] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="H_City_SQN" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="S_City_LDTS" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="S_City_RSRC" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CityName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="H_Target_SQN" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="S_Target_LDTS" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="S_Target_RSRC" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="S_TargetName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1324,17 +1217,17 @@ where [refTable].[CityName] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Check if exists in the Sat.Inputs[Lookup Input].Columns[Copy of city]"
+                      refId="Package\Data Flow Task\Check if exists in the Sat.Inputs[Lookup Input].Columns[Copy of target1]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Copy of city"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]">
+                      cachedName="Copy of target1"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">CityName</property>
+                          name="JoinToReferenceColumn">S_TargetName</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1410,11 +1303,11 @@ where [refTable].[CityName] = ?</property>
                       cachedName="RSRC"
                       lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[RSRC]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[city]"
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[target1]"
                       cachedDataType="wstr"
                       cachedLength="512"
-                      cachedName="city"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]" />
+                      cachedName="target1"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[target1]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1469,21 +1362,21 @@ where [refTable].[CityName] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of target1]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
-                      name="Copy of city"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of target1]"
+                      name="Copy of target1"
                       truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[target1]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1636,7 +1529,7 @@ where [refTable].[CityName] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[HubCity]</property>
+                  name="OpenRowset">[dbo].[HubTarget]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1693,42 +1586,42 @@ where [refTable].[CityName] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].Columns[H_Target_SQN]"
+                      cachedDataType="i4"
+                      cachedName="H_Target_SQN"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_SQN]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].Columns[Copy of LDTS]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of LDTS"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_LDTS]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of LDTS]" />
+                    <inputColumn
                       refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].Columns[Copy of RSRC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="36"
                       cachedName="Copy of RSRC"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_City_RSRC]"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_RSRC]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of RSRC]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].Columns[Copy of LDTS]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Copy of LDTS"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_City_LDTS]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of LDTS]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].Columns[H_City_SQN]"
-                      cachedDataType="i4"
-                      cachedName="H_City_SQN"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_City_SQN]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_SQN]"
                       dataType="i4"
-                      name="H_City_SQN" />
+                      name="H_Target_SQN" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_City_LDTS]"
+                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_LDTS]"
                       dataType="dbTimeStamp"
-                      name="H_City_LDTS" />
+                      name="H_Target_LDTS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_City_RSRC]"
+                      refId="Package\Data Flow Task\Inserting into HUB.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_RSRC]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="H_City_RSRC" />
+                      name="H_Target_RSRC" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1773,7 +1666,7 @@ where [refTable].[CityName] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[SatCity]</property>
+                  name="OpenRowset">[dbo].[SatTarget]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1830,16 +1723,16 @@ where [refTable].[CityName] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].Columns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].Columns[H_Target_SQN]"
                       cachedDataType="i4"
-                      cachedName="H_City_SQN"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[H_City_SQN]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]" />
+                      cachedName="H_Target_SQN"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_SQN]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].Columns[Copy of LDTS]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Copy of LDTS"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_City_LDTS]"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_Target_LDTS]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of LDTS]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].Columns[Copy of RSRC]"
@@ -1847,39 +1740,39 @@ where [refTable].[CityName] = ?</property>
                       cachedDataType="str"
                       cachedLength="36"
                       cachedName="Copy of RSRC"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_City_RSRC]"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_Target_RSRC]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of RSRC]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].Columns[Copy of city]"
+                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].Columns[Copy of target1]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Copy of city"
-                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]" />
+                      cachedName="Copy of target1"
+                      externalMetadataColumnId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_TargetName]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[H_Target_SQN]"
                       dataType="i4"
-                      name="H_City_SQN" />
+                      name="H_Target_SQN" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_City_LDTS]"
+                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_Target_LDTS]"
                       dataType="dbTimeStamp"
-                      name="S_City_LDTS" />
+                      name="S_Target_LDTS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_City_RSRC]"
+                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_Target_RSRC]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="S_City_RSRC" />
+                      name="S_Target_RSRC" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
+                      refId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input].ExternalColumns[S_TargetName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="CityName" />
+                      name="S_TargetName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2008,14 +1901,14 @@ where [refTable].[CityName] = ?</property>
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target1]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[target1]"
                       length="512"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
-                      name="city"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target1]"
+                      name="target1"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -2747,11 +2640,11 @@ where [refTable].[CityName] = ?</property>
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[target1]"
                       dataType="wstr"
                       length="512"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
-                      name="city" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[target1]"
+                      name="target1" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3091,7 +2984,7 @@ public class ScriptMain : UserComponent
         /*
          * Add your code here
          */
-        Row.Copyofcity = Row.city.Substring(0, 50);
+        Row.Copyoftarget1 = Row.target1.Substring(0, 50);
     }
 
 }
@@ -3121,14 +3014,14 @@ public class Input0Buffer: ScriptBuffer
     {
     }
 
-    public String city
+    public String target1
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[0]);
         }
     }
-    public bool city_IsNull
+    public bool target1_IsNull
     {
         get
         {
@@ -3136,14 +3029,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String Copyofcity
+    public String Copyoftarget1
     {
         set
         {
             this[1] = value;
         }
     }
-    public bool Copyofcity_IsNull
+    public bool Copyoftarget1_IsNull
     {
         set
         {
@@ -3208,92 +3101,7 @@ namespace SC_6cada2b402bf4ea6a24e58e42be631c0.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4aaaf0e1-4e5e-4248-9c9e-23a27a9f751c}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_6cada2b402bf4ea6a24e58e42be631c0</RootNamespace>
-    <AssemblyName>SC_6cada2b402bf4ea6a24e58e42be631c0</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Compile Include="main.cs" />
-    <Compile Include="BufferWrapper.cs" />
-    <Compile Include="ComponentWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_6cada2b402bf4ea6a24e58e42be631c0" IconIndex="0"></Host>
-        <ProjectClient>
-          <HostIdentifier>SSIS_SC130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></arrayElement>
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{4aaaf0e1-4e5e-4248-9c9e-23a27a9f751c}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_6cada2b402bf4ea6a24e58e42be631c0</RootNamespace><AssemblyName>SC_33A94240AD8947A5B48D8860655486E3</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptComponent" GeneratedNamespace="SC_6cada2b402bf4ea6a24e58e42be631c0" IconIndex="0"></Host><ProjectClient><HostIdentifier>SSIS_SC130</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Project]]></arrayElement>
                     <arrayElement
@@ -3448,18 +3256,18 @@ namespace SC_6cada2b402bf4ea6a24e58e42be631c0.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_6cada2b402bf4ea6a24e58e42be631c0.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_33A94240AD8947A5B48D8860655486E3.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAAcOBlkAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAApjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHDeClkAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAsjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFQxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAGAxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAArBEAAAAgAAAAEgAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAuBEAAAAgAAAAEgAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACI
-MQAAAAAAAEgAAAACAAUAsCEAAOwOAAABAAAAAAAAAJwwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACU
+MQAAAAAAAEgAAAACAAUAsCEAAPgOAAABAAAAAAAAAKgwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACipWAwNvBgAABhYfMm8SAAAKbwgA
 AAYqHgIoDAAABioqAgMEBSgTAAAKKlICexQAAAoCexUAAAoWlG8WAAAKKiICFigXAAAKKiYCFwMo
 GAAACipaAywIAhcoGQAACipyAQAAcHMaAAAKeh4CKBsAAAoqHgIoHAAACip+AigdAAAKAgJzEAAA
@@ -3467,78 +3275,78 @@ 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
-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
+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
-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
+AAcABQAIAAcAAAAXAMkAAABaA80AAAARAMkAAABUA80AAABQBNEAAADhANYAAACUBdsAAgAGAAMA
 AgAHAAUAAQAIAAcAAQAJAAkAAgATAAsAAgAUAA0AAQAVAA0AAgAWAA8ABIAAAAEAAAAAAAAAAAAA
-AAAAAQAAAAQAAAAAAAAAAAAAAGcANgAAAAAADQAAAAAAAAAAAAAAcACmBQAAAAANAAAAAAAAAAAA
-AABwAMMFAAAAAAQAAAAAAAAAAAAAAGcAVgMAAAAAAAAAAAEAAACNBAAAAAAAAABTQ182Y2FkYTJi
-NDAyYmY0ZWE2YTI0ZTU4ZTQyYmU2MzFjMAA8TW9kdWxlPgBJbnB1dElEAG1zY29ybGliAGRlZmF1
-bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUA
-TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3Vs
-dHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3Nh
-YmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0
-dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3Nl
-bWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1l
-d29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNj
-cmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5
-UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29t
-cG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGlt
-ZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0
-ZW0uUnVudGltZS5WZXJzaW9uaW5nAEdldFN0cmluZwBTdWJzdHJpbmcAU3lzdGVtLkNvbXBvbmVu
-dE1vZGVsAFNDXzZjYWRhMmI0MDJiZjRlYTZhMjRlNThlNDJiZTYzMWMwLmRsbABnZXRfY2l0eV9J
-c051bGwAc2V0X0NvcHlvZmNpdHlfSXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAHJlc291
-cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRp
-b24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21w
-YXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAElucHV0MEJ1ZmZlcgBQ
-aXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0
-b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lz
-dGVtLlJlc291cmNlcwBTQ182Y2FkYTJiNDAyYmY0ZWE2YTI0ZTU4ZTQyYmU2MzFjMC5Qcm9wZXJ0
-aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfNmNhZGEyYjQwMmJmNGVh
-NmEyNGU1OGU0MmJlNjMxYzAuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhl
-cwBHZXRDb2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5k
-T2ZSb3dzZXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0
-Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZl
-ci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93
-AE5leHRSb3cAZ2V0X0Fzc2VtYmx5AGdldF9jaXR5AHNldF9Db3B5b2ZjaXR5AACAm0kAcwBOAHUA
-bABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAg
-AEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUA
-IABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwA2
-AGMAYQBkAGEAMgBiADQAMAAyAGIAZgA0AGUAYQA2AGEAMgA0AGUANQA4AGUANAAyAGIAZQA2ADMA
-MQBjADAALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAIym7PttkMlH
-ugS2dp5kh/0ABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkFIAIOCAgJIAMBEj0dCBJBAwYSPQMG
-HQgEIAEOCAQgAQIIBSACAQgcAyAAAgYgAgIOEXEFIAEdCAgGAAESdRF5BCAAEn0GIAIBDhJ9CLd6
-XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJFAwYSUQMGElUDBhIgBSABARIMAyAADgQgAQECCSAE
-AQgOEj0SQQUgAQESRQQAABJRBAAAElUFAAEBElUEAAASIAMAAAEDKAAOAygAAgQIABJRBAgAElUE
-CAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAj
-U0NfNmNhZGEyYjQwMmJmNGVhNmEyNGU1OGU0MmJlNjMxYzAAAAUBAAAAABYBABFDb3B5cmlnaHQg
-QCAgMjAxNwAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNw
-bGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUEAQAAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0u
-UmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291
-cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAHwxAAAAAAAAAAAA
-AJYxAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIMQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1z
-Y29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAHwAAAAQAAAAAAAAAAAAAAGcAVAAAAAAADQAAAAAAAAAAAAAAcADKBQAAAAANAAAAAAAAAAAA
+AABwAOcFAAAAAAQAAAAAAAAAAAAAAGcAegMAAAAAAAAAAAEAAACxBAAAAAAAAABnZXRfdGFyZ2V0
+MQBzZXRfQ29weW9mdGFyZ2V0MQBTQ18zM0E5NDI0MEFEODk0N0E1QjQ4RDg4NjA2NTU0ODZFMwA8
+TW9kdWxlPgBJbnB1dElEAG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRs
+ZQBHZXRUeXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlw
+ZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGlj
+YXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRB
+dHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRl
+AEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5
+VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZp
+Z3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlv
+blJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNv
+cHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBB
+c3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJl
+RXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAEdldFN0
+cmluZwBTdWJzdHJpbmcAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzMzQTk0MjQwQUQ4OTQ3QTVC
+NDhEODg2MDY1NTQ4NkUzLmRsbABnZXRfdGFyZ2V0MV9Jc051bGwAc2V0X0NvcHlvZnRhcmdldDFf
+SXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lz
+dGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24A
+SW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91
+dHB1dE5hbWVNYXAAT3V0cHV0TWFwAElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRC
+dWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNz
+AFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ182Y2Fk
+YTJiNDAyYmY0ZWE2YTI0ZTU4ZTQyYmU2MzFjMC5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJj
+ZXMARGVidWdnaW5nTW9kZXMAU0NfNmNhZGEyYjQwMmJmNGVhNmEyNGU1OGU0MmJlNjMxYzAuUHJv
+cGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNl
+dHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQA
+VXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQw
+X1Byb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAZ2V0X0Fzc2VtYmx5
+AACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABz
+AGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAA
+dABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAg
+ADAAAHFTAEMAXwA2AGMAYQBkAGEAMgBiADQAMAAyAGIAZgA0AGUAYQA2AGEAMgA0AGUANQA4AGUA
+NAAyAGIAZQA2ADMAMQBjADAALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBl
+AHMAAC4Zl4uhfhtLgwPDso9/hV4ABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkFIAIOCAgJIAMB
+Ej0dCBJBAwYSPQMGHQgEIAEOCAQgAQIIBSACAQgcAyAAAgYgAgIOEXEFIAEdCAgGAAESdRF5BCAA
+En0GIAIBDhJ9CLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJFAwYSUQMGElUDBhIgBSABARIM
+AyAADgQgAQECCSAEAQgOEj0SQQUgAQESRQQAABJRBAAAElUFAAEBElUEAAASIAMAAAEDKAAOAygA
+AgQIABJRBAgAElUECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEI
+AQACAAAAAAAoAQAjU0NfNmNhZGEyYjQwMmJmNGVhNmEyNGU1OGU0MmJlNjMxYzAAAAUBAAAAABYB
+ABFDb3B5cmlnaHQgQCAgMjAxNwAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC41AQBUDhRG
+cmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUEAQAAAAAAtAAAAM7K774BAAAA
+kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
+LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
+U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
+AIgxAAAAAAAAAAAAAKIxAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACUMQAAAAAAAAAAAAAAAF9D
+b3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
@@ -3549,13 +3357,13 @@ ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBDAF8ANgBjAGEAZABhADIAYgA0ADAAMgBiAGYANABlAGEANgBhADIANABlADUAOABlADQA
 MgBiAGUANgAzADEAYwAwAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwA2AGMAYQBkAGEA
-MgBiADQAMAAyAGIAZgA0AGUAYQA2AGEAMgA0AGUANQA4AGUANAAyAGIAZQA2ADMAMQBjADAALgBk
+ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwAzADMAQQA5ADQA
+MgA0ADAAQQBEADgAOQA0ADcAQQA1AEIANAA4AEQAOAA4ADYAMAA2ADUANQA0ADgANgBFADMALgBk
 AGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcA
 aAB0ACAAQAAgACAAMgAwADEANwAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBz
-AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADYA
-YwBhAGQAYQAyAGIANAAwADIAYgBmADQAZQBhADYAYQAyADQAZQA1ADgAZQA0ADIAYgBlADYAMwAx
-AGMAMAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA2AGMA
+AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADMA
+MwBBADkANAAyADQAMABBAEQAOAA5ADQANwBBADUAQgA0ADgARAA4ADgANgAwADYANQA1ADQAOAA2
+AEUAMwAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA2AGMA
 YQBkAGEAMgBiADQAMAAyAGIAZgA0AGUAYQA2AGEAMgA0AGUANQA4AGUANAAyAGIAZQA2ADMAMQBj
 ADAAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
 OAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAA
@@ -3566,7 +3374,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAKgxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAALQxAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3582,7 +3390,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_6cada2b402bf4ea6a24e58e42be631c0</property>
+                  typeConverter="NOTBROWSABLE">SC_33a94240ad8947a5b48d8860655486e3</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -3611,12 +3419,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum"
-                  typeConverter="NOTBROWSABLE">9243e6c4402a60ed4f8e24eb7576a8e6</property>
+                  typeConverter="NOTBROWSABLE">55fb980d41d6a3b76f9b2eb983d3e06d</property>
                 <property
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataShaChecksum"
-                  typeConverter="NOTBROWSABLE">811da3fedc1841ffb09e5bc908073367db6776be</property>
+                  typeConverter="NOTBROWSABLE">3ad2a1180e8af817d1cd57d79ad9badfbc132985</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -3628,11 +3436,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Truncate String.Inputs[Input 0].Columns[city]"
+                      refId="Package\Data Flow Task\Truncate String.Inputs[Input 0].Columns[target1]"
                       cachedDataType="wstr"
                       cachedLength="512"
-                      cachedName="city"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]" />
+                      cachedName="target1"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[target1]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3644,12 +3452,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   synchronousInputId="Package\Data Flow Task\Truncate String.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Truncate String.Outputs[Output 0].Columns[Copy of city]"
+                      refId="Package\Data Flow Task\Truncate String.Outputs[Output 0].Columns[Copy of target1]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task\Truncate String.Outputs[Output 0].Columns[Copy of city]"
-                      name="Copy of city" />
+                      lineageId="Package\Data Flow Task\Truncate String.Outputs[Output 0].Columns[Copy of target1]"
+                      name="Copy of target1" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3668,20 +3476,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[city]"
-                      cachedDataType="wstr"
-                      cachedLength="512"
-                      cachedName="city"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[city]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Phase]"
                       cachedDataType="wstr"
                       cachedLength="5"
@@ -3696,16 +3490,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[H_Target_SQN]"
                       cachedDataType="i4"
-                      cachedName="H_City_SQN"
-                      lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_City_SQN]">
+                      cachedName="H_Target_SQN"
+                      lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_Target_SQN]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]}</property>
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3737,21 +3531,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Copy of city]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Copy of city"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[RSRC]"
                       cachedDataType="wstr"
                       cachedLength="36"
@@ -3778,6 +3557,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LDTS]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Copy of target1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of target1"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of target1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3787,45 +3581,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Union All Input 2">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[city]"
-                      cachedDataType="wstr"
-                      cachedLength="512"
-                      cachedName="city"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[city]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[city]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[H_Target_SQN]"
                       cachedDataType="i4"
-                      cachedName="H_City_SQN"
-                      lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_City_SQN]">
+                      cachedName="H_Target_SQN"
+                      lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[H_Target_SQN]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]}</property>
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Copy of city]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Copy of target1]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Copy of city"
-                      lineageId="Package\Data Flow Task\Truncate String.Outputs[Output 0].Columns[Copy of city]">
+                      cachedName="Copy of target1"
+                      lineageId="Package\Data Flow Task\Truncate String.Outputs[Output 0].Columns[Copy of target1]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]}</property>
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3914,12 +3694,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Union All Output 1">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[city]"
-                      dataType="wstr"
-                      length="512"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[city]"
-                      name="city" />
-                    <outputColumn
                       refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LDTS]"
                       dataType="date"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LDTS]"
@@ -3937,10 +3711,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Phase]"
                       name="Phase" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]"
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_City_SQN]"
-                      name="H_City_SQN" />
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[H_Target_SQN]"
+                      name="H_Target_SQN" />
                     <outputColumn
                       refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of LDTS]"
                       dataType="dbTimeStamp"
@@ -3954,12 +3728,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of RSRC]"
                       name="Copy of RSRC" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]"
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of city]"
-                      name="Copy of city" />
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Copy of target1]"
+                      name="Copy of target1" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -4383,92 +4157,7 @@ namespace SC_455f3bcd26f94c3e926fea8a5cd513a7.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{05bfaed7-a59e-4fdc-ac40-3ef21db05c46}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_455f3bcd26f94c3e926fea8a5cd513a7</RootNamespace>
-    <AssemblyName>SC_455f3bcd26f94c3e926fea8a5cd513a7</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Compile Include="main.cs" />
-    <Compile Include="BufferWrapper.cs" />
-    <Compile Include="ComponentWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_455f3bcd26f94c3e926fea8a5cd513a7" IconIndex="0"></Host>
-        <ProjectClient>
-          <HostIdentifier>SSIS_SC130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></arrayElement>
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{05bfaed7-a59e-4fdc-ac40-3ef21db05c46}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_455f3bcd26f94c3e926fea8a5cd513a7</RootNamespace><AssemblyName>SC_07596010741A475DA5EF67A1F18AD5C6</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptComponent" GeneratedNamespace="SC_455f3bcd26f94c3e926fea8a5cd513a7" IconIndex="0"></Host><ProjectClient><HostIdentifier>SSIS_SC130</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Project]]></arrayElement>
                     <arrayElement
@@ -4477,20 +4166,20 @@ namespace SC_455f3bcd26f94c3e926fea8a5cd513a7.Properties {
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
 		<msb:CodeName>SC_455f3bcd26f94c3e926fea8a5cd513a7</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
 		<msb:DisplayName>SC_455f3bcd26f94c3e926fea8a5cd513a7</msb:DisplayName>
 		<msb:ProjectId>{DDD714AC-D9F7-45D1-8ACE-04053C25C51A}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_455f3bcd26f94c3e926fea8a5cd513a7.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="BufferWrapper.cs"/>
-		<msb:File Include="main.cs"/>
 		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -4623,11 +4312,11 @@ namespace SC_455f3bcd26f94c3e926fea8a5cd513a7.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_455f3bcd26f94c3e926fea8a5cd513a7.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_07596010741A475DA5EF67A1F18AD5C6.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAL/cClkAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAwi8A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANbfClkAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAwi8A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHAvAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4664,7 +4353,7 @@ AOoALgArABMBLgAzABMBLgA7ABMBLgBDAOoALgBLABkBLgBTABMBLgBbADABQwBjAHoBSQBzAOEA
 4wBrAHoBAQF7AHoBBwABAAgAAwAAAOwDqgAAAMoArwAAADUFtAACAA8AAwACABAABQABABEABQAC
 ABIABwAEgAAAAQAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAAAAAATgA2AAAAAAANAAAAAAAAAAAA
 AABXAGsFAAAAAA0AAAAAAAAAAAAAAFcAiAUAAAAABAAAAAAAAAAAAAAATgAqAwAAAAAAAAAAAQAA
-AE0EAAAAAAAAAFNDXzQ1NWYzYmNkMjZmOTRjM2U5MjZmZWE4YTVjZDUxM2E3ADxNb2R1bGU+AElu
+AE0EAAAAAAAAAFNDXzA3NTk2MDEwNzQxQTQ3NURBNUVGNjdBMUYxOEFENUM2ADxNb2R1bGU+AElu
 cHV0SUQAbXNjb3JsaWIAVGhyZWFkAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBH
 ZXRUeXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxp
 bmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRp
@@ -4677,8 +4366,8 @@ bGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHly
 aWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3Nl
 bWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhl
 Y3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uVGhyZWFkaW5nAFN5c3RlbS5SdW50aW1lLlZl
-cnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ180NTVmM2JjZDI2Zjk0YzNl
-OTI2ZmVhOGE1Y2Q1MTNhNy5kbGwAU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVt
+cnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ18wNzU5NjAxMDc0MUE0NzVE
+QTVFRjY3QTFGMThBRDVDNi5kbGwAU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVt
 LkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AU3Ry
 aW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABTbGVlcABJ
 bnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFn
@@ -4693,7 +4382,7 @@ TWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1
 dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAZ2V0X0Fzc2VtYmx5AAAAAAAPSQBuAHAAdQB0ACAA
 MAAAcVMAQwBfADQANQA1AGYAMwBiAGMAZAAyADYAZgA5ADQAYwAzAGUAOQAyADYAZgBlAGEAOABh
 ADUAYwBkADUAMQAzAGEANwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
-cwAAABo9eo6wRxxNiDxWIRy5ch8ABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkEAAEBCAkgAwES
+cwAAAPHXNIFlhXtLiGbRAKGUSd4ABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkEAAEBCAkgAwES
 PR0IEkEDIAACBiACAg4RcQUgAR0ICAYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkIiYRdzYCA
 zJECBgIDBhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwJIAQBCA4SPRJBBSABARJFBAAAElEE
 AAASVQUAAQESVQQAABIgAwAAAQQIABJRBAgAElUECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5v
@@ -4715,13 +4404,13 @@ MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAQwBfADQANQA1AGYAMwBiAGMAZAAyADYAZgA5ADQAYwAzAGUAOQAyADYAZgBlAGEAOABh
 ADUAYwBkADUAMQAzAGEANwAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgAwAC4AMAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8ANAA1ADUAZgAz
-AGIAYwBkADIANgBmADkANABjADMAZQA5ADIANgBmAGUAYQA4AGEANQBjAGQANQAxADMAYQA3AC4A
+LgAwAC4AMAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AMAA3ADUAOQA2
+ADAAMQAwADcANAAxAEEANAA3ADUARABBADUARQBGADYANwBBADEARgAxADgAQQBEADUAQwA2AC4A
 ZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBn
 AGgAdAAgAEAAIAAgADIAMAAxADcAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsA
-cwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA0
-ADUANQBmADMAYgBjAGQAMgA2AGYAOQA0AGMAMwBlADkAMgA2AGYAZQBhADgAYQA1AGMAZAA1ADEA
-MwBhADcALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8ANAA1
+cwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwAw
+ADcANQA5ADYAMAAxADAANwA0ADEAQQA0ADcANQBEAEEANQBFAEYANgA3AEEAMQBGADEAOABBAEQA
+NQBDADYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8ANAA1
 ADUAZgAzAGIAYwBkADIANgBmADkANABjADMAZQA5ADIANgBmAGUAYQA4AGEANQBjAGQANQAxADMA
 YQA3AAAANAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAA
 ADgACAABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
@@ -4748,7 +4437,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_455f3bcd26f94c3e926fea8a5cd513a7</property>
+                  typeConverter="NOTBROWSABLE">SC_07596010741a475da5ef67a1f18ad5c6</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -4818,14 +4507,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Data Conversion Output]"
-              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
-              name="Data Conversion Output"
-              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
               name="Data Conversion Output"
               startId="Package\Data Flow Task\Data Conversion Again.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
               endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
@@ -4833,7 +4522,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
-              endId="Package\Data Flow Task\Add H_City_SQN.Inputs[Input 0]"
+              endId="Package\Data Flow Task\Add H_Target_SQN.Inputs[Input 0]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Check if exists in the Sat.Outputs[Lookup No Match Output]" />
             <path
@@ -4853,9 +4542,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Output 0]"
-              endId="Package\Data Flow Task\Multiplicate Data.Inputs[Multicast Input 1]"
+              endId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input]"
               name="Output 0"
-              startId="Package\Data Flow Task\Add H_City_SQN.Outputs[Output 0]" />
+              startId="Package\Data Flow Task\Wait for HUB to finish????.Outputs[Output 0]" />
             <path
               refId="Package\Data Flow Task.Paths[Output 01]"
               endId="Package\Data Flow Task\Data Conversion Again.Inputs[Data Conversion Input]"
@@ -4863,9 +4552,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Data Flow Task\Truncate String.Outputs[Output 0]" />
             <path
               refId="Package\Data Flow Task.Paths[Output 02]"
-              endId="Package\Data Flow Task\Inserting into SAT.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Multiplicate Data.Inputs[Multicast Input 1]"
               name="Output 0"
-              startId="Package\Data Flow Task\Wait for HUB to finish????.Outputs[Output 0]" />
+              startId="Package\Data Flow Task\Add H_Target_SQN.Outputs[Output 0]" />
             <path
               refId="Package\Data Flow Task.Paths[Union All Output 1]"
               endId="Package\Data Flow Task\Check if exists in the Sat.Inputs[Lookup Input]"
@@ -4903,58 +4592,58 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="127,42"
           Id="Package\Data Flow Task\Aggregate"
-          TopLeft="311,20" />
+          TopLeft="358,64" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Flow Task\Inserting into HUB"
-          TopLeft="493,243" />
+          TopLeft="540,287" />
         <NodeLayout
           Size="152,42"
           Id="Package\Data Flow Task\Truncate String"
-          TopLeft="406,73" />
+          TopLeft="453,119" />
         <NodeLayout
           Size="202,42"
           Id="Package\Data Flow Task\Wait for HUB to finish????"
-          TopLeft="255,386" />
+          TopLeft="302,430" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Data Flow Task\Add H_City_SQN"
-          TopLeft="68,298" />
+          Size="171,42"
+          Id="Package\Data Flow Task\Add H_Target_SQN"
+          TopLeft="115,342" />
         <NodeLayout
           Size="186,42"
           Id="Package\Data Flow Task\Data Conversion Again"
-          TopLeft="194,73" />
+          TopLeft="241,117" />
         <NodeLayout
           Size="195,42"
           Id="Package\Data Flow Task\Check if exists in the Sat"
-          TopLeft="48,189" />
+          TopLeft="95,233" />
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="85,18" />
+          TopLeft="132,62" />
         <NodeLayout
           Size="164,42"
           Id="Package\Data Flow Task\Inserting into SAT"
-          TopLeft="495,336" />
+          TopLeft="542,380" />
         <NodeLayout
           Size="157,42"
           Id="Package\Data Flow Task\Multiplicate Data"
-          TopLeft="280,301" />
+          TopLeft="327,345" />
         <NodeLayout
           Size="121,42"
           Id="Package\Data Flow Task\Union All"
-          TopLeft="13,113" />
+          TopLeft="60,157" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Flow Task\Add Columns"
-          TopLeft="501,16" />
+          TopLeft="548,60" />
         <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="508,164" />
+          TopLeft="555,208" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="73.5,155">
+          TopLeft="120.5,199">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4987,8 +4676,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output 02]"
-          TopLeft="457,407">
+          Id="Package\Data Flow Task.Paths[Output 0]"
+          TopLeft="504,451">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5022,7 +4711,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output 01]"
-          TopLeft="406,94">
+          TopLeft="453,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5043,19 +4732,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output 0]"
-          TopLeft="226,320.5">
+          Id="Package\Data Flow Task.Paths[Output 02]"
+          TopLeft="286,364.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="54,0"
+              EndConnector="41,0"
               Start="0,0"
-              End="46.5,0">
+              End="33.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="46.5,0" />
+                    End="33.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5066,7 +4755,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="235,40">
+          TopLeft="282,84">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5088,7 +4777,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Multicast Output 3]"
-          TopLeft="357.25,343">
+          TopLeft="404.25,387">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5110,7 +4799,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Multicast Output 1]"
-          TopLeft="437,316.333333333333">
+          TopLeft="484,360.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5144,31 +4833,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="146.25,231">
+          TopLeft="192.5,275">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67"
+              EndConnector="8,67"
               Start="0,0"
-              End="0,59.5">
+              End="8,59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.5" />
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="4,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,33.5"
+                    Point2="8,33.5"
+                    Point3="8,37.5" />
+                  <mssgle:LineSegment
+                    End="8,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,23.9453125,111.6127734375,11.609375"
+              BoundingBox="-51.80638671875,38.5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="571.5,58">
+          TopLeft="618.5,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5201,8 +4902,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
-          TopLeft="194,94">
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="241,138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5235,8 +4936,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="508,185">
+          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          TopLeft="555,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5270,43 +4971,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Error Output]"
-          TopLeft="561.333333333333,164">
+          TopLeft="608.333333333333,208">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-79.3333333333334,-49"
+              EndConnector="-79.3333333333334,-47"
               Start="0,0"
-              End="-79.3333333333334,-41.5">
+              End="-79.3333333333334,-39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-15.8984771573604" />
+                    End="0,-15.0862944162437" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-15.8984771573604"
-                    Point2="0,-19.8984771573604"
-                    Point3="-4,-19.8984771573604" />
+                    Point1="0,-15.0862944162437"
+                    Point2="0,-19.0862944162437"
+                    Point3="-4,-19.0862944162437" />
                   <mssgle:LineSegment
-                    End="-75.3333333333334,-19.8984771573604" />
+                    End="-75.3333333333334,-19.0862944162437" />
                   <mssgle:CubicBezierSegment
-                    Point1="-75.3333333333334,-19.8984771573604"
-                    Point2="-79.3333333333334,-19.8984771573604"
-                    Point3="-79.3333333333334,-23.8984771573604" />
+                    Point1="-75.3333333333334,-19.0862944162437"
+                    Point2="-79.3333333333334,-19.0862944162437"
+                    Point3="-79.3333333333334,-23.0862944162437" />
                   <mssgle:LineSegment
-                    End="-79.3333333333334,-41.5" />
+                    End="-79.3333333333334,-39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-105.753053385417,-14.8984771573604,132.1727734375,11.43359375"
+              BoundingBox="-105.753053385417,-14.0862944162437,132.1727734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
-          TopLeft="438,39">
+          TopLeft="485,83">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5348,17 +5049,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[SatCity]</Value>
+          type="q3:string">[dbo].[SatTarget]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
