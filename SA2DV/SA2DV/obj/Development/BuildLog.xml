@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SA2DV</Name>
-    <LastWriteTime>2017-05-04T09:57:36.4604733Z</LastWriteTime>
+    <LastWriteTime>2017-05-04T13:58:34.6914266Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Hub_SatCity.dtsx</Name>
-      <LastWriteTime>2017-05-04T07:48:46.3397785Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.6009138Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -63,22 +63,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>HubWeaponSubtype.dtsx</Name>
-      <LastWriteTime>2017-05-04T10:11:34.9435192Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.5869113Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SatWeaponSubtype.dtsx</Name>
-      <LastWriteTime>2017-05-04T07:07:51.6046144Z</LastWriteTime>
+      <LastWriteTime>2017-05-14T09:47:08.0436751Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LinkWeaponType_Subtype.dtsx</Name>
-      <LastWriteTime>2017-05-04T07:07:51.5135578Z</LastWriteTime>
+      <LastWriteTime>2017-05-14T09:20:42.2179849Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Hub_SatGroup.dtsx</Name>
-      <LastWriteTime>2017-05-04T07:51:17.4544454Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.6179215Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -88,7 +88,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>HubTargetSubType.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:54:04.0483246Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.5779119Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -98,52 +98,52 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SatTargetSubType.dtsx</Name>
-      <LastWriteTime>2017-05-12T13:03:17.7431285Z</LastWriteTime>
+      <LastWriteTime>2017-05-13T19:04:55.7744178Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LinkTargetType_Subtype.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:43:04.8204672Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.6714264Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Hub_SatTarget.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:32:40.4926882Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.6324255Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LinkTargetNationality.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:25:02.8776159Z</LastWriteTime>
+      <LastWriteTime>2017-05-13T19:19:07.2504504Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>HubNationality.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:27:13.7130075Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.5659136Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SatNationality.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:29:57.9388206Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.712935Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LinkTarget_TargetTypeSubtype.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:55:04.0192654Z</LastWriteTime>
+      <LastWriteTime>2017-05-13T19:20:26.5163175Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>HubIncident.dtsx</Name>
-      <LastWriteTime>2017-05-04T08:59:20.8991443Z</LastWriteTime>
+      <LastWriteTime>2017-05-04T13:58:34.5539183Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SatIncident.dtsx</Name>
-      <LastWriteTime>2017-05-04T09:40:33.7879351Z</LastWriteTime>
+      <LastWriteTime>2017-05-13T19:25:05.2847375Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LinkAllIncident.dtsx</Name>
-      <LastWriteTime>2017-05-04T10:18:10.5091974Z</LastWriteTime>
+      <LastWriteTime>2017-05-14T06:43:20.1225979Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

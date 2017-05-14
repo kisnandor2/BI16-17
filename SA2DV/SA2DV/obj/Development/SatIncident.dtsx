@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-M8CH1V1\kisna"
   DTS:DTSID="{37F6E898-3EEE-484A-8E2F-FBA0A70AB6C1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.1400.361"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SatIncident"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{E271E0EC-2C69-465F-876E-93B7373CFEEC}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{0E56332F-CDD8-422A-8D96-36FA8815C81F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -145,7 +145,7 @@
                       refId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[IncidentDate]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       lineageId="Package\Data Flow Task\Add Columns.Outputs[Derived Column Output].Columns[IncidentDate]"
                       name="IncidentDate"
                       truncationRowDisposition="FailComponent">
@@ -2465,10 +2465,6 @@ where [refTable].[H_Incident_SQN] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="61,62" />
-        <NodeLayout
           Size="113,47"
           Id="Package\Data Flow Task\Lookup"
           TopLeft="314,153" />
@@ -2476,6 +2472,10 @@ where [refTable].[H_Incident_SQN] = ?</property>
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="60,278" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Data Flow Task\Lookup 1"
+          TopLeft="88,155" />
         <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
@@ -2485,9 +2485,31 @@ where [refTable].[H_Incident_SQN] = ?</property>
           Id="Package\Data Flow Task\Add Columns"
           TopLeft="506,62" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Data Flow Task\Lookup 1"
-          TopLeft="88,155" />
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="61,62" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="211,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="295,0"
+              Start="0,0"
+              End="287.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="287.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
           TopLeft="147.25,197">
@@ -2580,51 +2602,16 @@ where [refTable].[H_Incident_SQN] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="211,83">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="295,0"
-              Start="0,0"
-              End="287.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="287.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2634,7 +2621,7 @@ where [refTable].[H_Incident_SQN] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2660,7 +2647,7 @@ where [refTable].[H_Incident_SQN] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2670,10 +2657,23 @@ where [refTable].[H_Incident_SQN] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

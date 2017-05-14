@@ -1,3 +1,5 @@
+--DROP DATABASE DM;
+--create database DM;
 USE DV;
 GO
 
@@ -87,12 +89,11 @@ SELECT
 	hwt.H_WeaponType_LDTS, hwt.H_WeaponType_RSRC,
 	hwst.H_WeaponSubType_LDTS, hwst.H_WeaponSubType_RSRC
 	INTO [DM].[dbo].[DimWeapon]
-FROM HubWeaponType hwt, SatWeaponType swt, HubWeaponSubType hwst, SatWeaponSubType swst, LinkWeaponType_Subtype l
-WHERE 
-	hwt.H_WeaponType_SQN = swt.H_WeaponType_SQN AND
-	hwst.H_WeaponSubType_SQN = swst.H_WeaponSubType_SQN AND
-	l.H_WeaponSubType_SQN = hwst.H_WeaponSubType_SQN AND
-	l.H_WeaponType_SQN = hwt.H_WeaponType_SQN
+FROM  LinkWeaponType_Subtype l
+		INNER JOIN HubWeaponType hwt ON l.H_WeaponType_SQN = hwt.H_WeaponType_SQN
+		INNER JOIN HubWeaponSubType hwst ON l.H_WeaponSubType_SQN = hwst.H_WeaponSubType_SQN
+		INNER JOIN SatWeaponType swt ON hwt.H_WeaponType_SQN = swt.H_WeaponType_SQN		 
+		RIGHT JOIN SatWeaponSubType swst ON hwst.H_WeaponSubType_SQN = swst.H_WeaponSubType_SQN 
 
 ALTER TABLE DM.dbo.DimWeapon
 ADD CONSTRAINT PK_DimWeapon PRIMARY KEY (SK);
@@ -156,7 +157,6 @@ WHERE
 
 ALTER TABLE DM.dbo.DimTarget
 ADD CONSTRAINT PK_DimTarget PRIMARY KEY (SK);
-
 --DimDate
 IF EXISTS (SELECT * FROM DM.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[DimDate]') AND type in (N'U'))
 BEGIN
@@ -201,96 +201,3 @@ SELECT
 	[DayName] = DATENAME(WEEKDAY, IncidentDate)
 FROM #temp
 IF OBJECT_ID('tempdb..#temp') IS NOT NULL DROP TABLE #temp
-
---FactAllIncident
-IF EXISTS (SELECT * FROM DM.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[FactAllIncident]') AND type in (N'U'))
-BEGIN
-	DROP TABLE DM.dbo.FactAllIncident
-	ALTER SEQUENCE Seq RESTART
-END
-
-CREATE TABLE [DM].[dbo].[FactAllIncident](
-	[SK] [bigint] NOT NULL,
-	[Incident_SK] [bigint] NOT NULL,
-	[Attack_SK] [bigint] NOT NULL,
-	[Group_SK] [bigint] NOT NULL,
-	[City_SK] [bigint] NOT NULL,
-	[Target_SK] [bigint] NOT NULL,
-	[WeaponSubType_SK] [bigint] NOT NULL,
-	[PolEcoRelSoc] [bit] NULL,
-	[LgAudience] [bit] NULL,
-	[HumanLaw] [bit] NULL,
-	[Success] [bit] NULL,
-	[Suicide] [bit] NULL,
-	[NrPerps] [int] NULL,
-	[NrPerpsCustody] [int] NULL,
-	[NrKills] [int] NULL,
-	[NrWounds] [int] NULL,
-	[PropDmgCat] [int] NULL,
-	[PropDmgValue] [bigint] NULL,
-	[HostageCount] [int] NULL,
-	[RansomAmount] [int] NULL,
-	[RansomPaid] [int] NULL,
-	[HostKidOutcome] [int] NULL,
-	PRIMARY KEY (SK),
-	FOREIGN KEY ([Incident_SK]) REFERENCES [DM].dbo.DimIncident([SK]),
-	FOREIGN KEY ([Attack_SK]) REFERENCES [DM].dbo.DimAttack([SK]),
-	FOREIGN KEY ([Group_SK]) REFERENCES [DM].dbo.DimGroup([SK]),
-	FOREIGN KEY ([City_SK]) REFERENCES [DM].dbo.DimLocation([SK]),
-	FOREIGN KEY ([Target_SK]) REFERENCES [DM].dbo.DimTarget([SK]),
-	FOREIGN KEY ([WeaponSubType_SK]) REFERENCES [DM].dbo.DimWeapon([SK]),
-) ON [PRIMARY]
-
-SELECT 
-	NEXT VALUE FOR Seq AS SK,
-	Incident_SK = 1,
-	Attack_SK = 1,
-	Group_SK = 1,
-	City_SK = 1,
-	Target_SK = 1,
-	WeaponSubType_SK = ,
-	s.PolEcoRelSoc,
-	s.LgAudience,
-	s.HumanLaw,
-	s.Success,
-	s.Suicide,
-	s.NrPerps,
-	s.NrPerpsCustody,
-	s.NrKills,
-	s.NrWounds,
-	s.PropDmgCat,
-	s.PropDmgValue,
-	s.HostageCount,
-	s.RansomAmount,
-	s.RansomPaid,
-	s.HostKidOutcome
-	INTO [DM].dbo.FactAllIncident
-FROM LinkIncident_All l, SatIncident s
-WHERE
-	l.H_Incident_SQN = s.H_Incident_SQN
-/*
-	Incident_SK = (
-		SELECT d1.SK
-		FROM [DM].dbo.DimIncident d1
-		WHERE d1.H_Incident_SQN = l.H_Incident_SQN),
-	Attack_SK = (
-		SELECT d2.SK
-		FROM [DM].dbo.DimAttack d2
-		WHERE d2.H_Attack_SQN = l.H_Attack_SQN),
-	Group_SK = (
-		SELECT d3.SK
-		FROM [DM].dbo.DimGroup d3
-		WHERE d3.H_Group_SQN = l.H_Group_SQN),
-	City_SK = (
-		SELECT d4.SK
-		FROM [DM].dbo.DimLocation d4
-		WHERE d4.H_City_SQN = l.H_City_SQN),
-	Target_SK = (
-		SELECT d6.SK
-		FROM [DM].dbo.DimTarget d6
-		WHERE d6.H_Target_SQN = l.H_Target_SQN),
-	WeaponSubType_SK = (
-		SELECT d5.SK
-		FROM [DM].dbo.DimWeapon d5
-		WHERE d5.H_WeaponSubType_SQN = l.H_WeaponSubType_SQN),
-*/
