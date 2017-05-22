@@ -47,6 +47,7 @@ CREATE TABLE [DM].[dbo].[FactAllIncident](
 	FOREIGN KEY ([City_SK]) REFERENCES [DM].dbo.DimLocation([SK]),
 	FOREIGN KEY ([Target_SK]) REFERENCES [DM].dbo.DimTarget([SK]),
 	FOREIGN KEY ([WeaponSubType_SK]) REFERENCES [DM].dbo.DimWeapon([SK]),
+	FOREIGN KEY ([Date_SK]) REFERENCES [DM].dbo.DimDate([SK]),
 ) ON [PRIMARY]
 
 SET NOCOUNT ON;
@@ -153,8 +154,6 @@ BEGIN
 
 	SET @Target_SK= (SELECT MAX(dt.SK) FROM [DM].dbo.DimTarget dt
 			WHERE dt.H_Target_SQN = @Target_SQN);
-	IF @Target_SK IS NULL
-		SET @Target_Sk = 0;
 
 	SET @WeaponSubType_SK= (SELECT MIN(dws.SK) FROM [DM].dbo.DimWeapon dws
 			WHERE dws.H_WeaponSubType_SQN = @WeaponSubType_SQN);
@@ -162,6 +161,10 @@ BEGIN
 	SET @Date_SK= (SELECT dt.SK FROM [DM].dbo.DimDate dt
 			WHERE dt.Date = @IncidentDate);
 
+	if @Incident_SK IS NOT NULL AND @Attack_SK is NOT NULL AND @City_SK IS NOT NULL
+		AND @Group_SK IS NOT NULL AND @Target_SK IS NOT NULL
+		AND @WeaponSubType_SK IS NOT NULL AND @Date_SK IS NOT NULL
+	BEGIN
 	INSERT INTO [DM].[dbo].[FactAllIncident] (SK, Incident_SK, Attack_SK, Group_SK, 
 		City_SK, Target_SK, WeaponSubType_SK, Date_SK,
 		PolEcoRelSoc, LgAudience, HumanLaw, Success, Suicide, NrPerps, 
@@ -172,6 +175,7 @@ BEGIN
 		@PolEcoRelSoc, @LgAudience, @HumanLaw, @Success, @Suicide, @NrPerps,
 		@NrPerpsCustody, @NrKills, @NrWounds, @PropDmgCat,
 		@PropDmgValue, @HostageCount, @RansomAmount, @RansomPaid, @HostKidOutcome);
+	END
  FETCH NEXT FROM linkCursor
 INTO @Attack_SQN, @City_SQN, @Group_SQN,
 	@Incident_SQN, @Target_SQN, @WeaponSubType_SQN,

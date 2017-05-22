@@ -201,3 +201,93 @@ SELECT
 	[DayName] = DATENAME(WEEKDAY, IncidentDate)
 FROM #temp
 IF OBJECT_ID('tempdb..#temp') IS NOT NULL DROP TABLE #temp
+
+--FactAllIncident
+IF EXISTS (SELECT * FROM DV.sys.objects WHERE object_id = OBJECT_ID(N'[DV].[dbo].[Seq]') AND type in (N'SO'))
+	DROP SEQUENCE Seq
+CREATE SEQUENCE Seq
+	START WITH 1
+	INCREMENT BY 1
+GO
+
+
+--FactAllIncident
+IF EXISTS (SELECT * FROM DM.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[FactAllIncident]') AND type in (N'U'))
+BEGIN
+	DROP TABLE DM.dbo.FactAllIncident
+	ALTER SEQUENCE Seq RESTART
+END
+
+CREATE TABLE [DM].[dbo].[FactAllIncident](
+	[Incident_SK] [bigint] NOT NULL,
+	[Attack_SK] [bigint] NOT NULL,
+	[Group_SK] [bigint] NOT NULL,
+	[City_SK] [bigint] NULL,
+	[Target_SK] [bigint] NOT NULL,
+	[WeaponSubType_SK] [bigint] NOT NULL,
+	[Date_SK] [bigint] NULL,
+	[PolEcoRelSoc] [bit] NULL,
+	[LgAudience] [bit] NULL,
+	[HumanLaw] [bit] NULL,
+	[Success] [bit] NULL,
+	[Suicide] [bit] NULL,
+	[NrPerps] [int] NULL,
+	[NrPerpsCustody] [int] NULL,
+	[NrKills] [int] NULL,
+	[NrWounds] [int] NULL,
+	[PropDmgCat] [int] NULL,
+	[PropDmgValue] [bigint] NULL,
+	[HostageCount] [int] NULL,
+	[RansomAmount] [int] NULL,
+	[RansomPaid] [int] NULL,
+	[HostKidOutcome] [int] NULL,
+	FOREIGN KEY ([Incident_SK]) REFERENCES [DM].dbo.DimIncident([SK]),
+	FOREIGN KEY ([Attack_SK]) REFERENCES [DM].dbo.DimAttack([SK]),
+	FOREIGN KEY ([Group_SK]) REFERENCES [DM].dbo.DimGroup([SK]),
+	FOREIGN KEY ([City_SK]) REFERENCES [DM].dbo.DimLocation([SK]),
+	FOREIGN KEY ([Target_SK]) REFERENCES [DM].dbo.DimTarget([SK]),
+	FOREIGN KEY ([WeaponSubType_SK]) REFERENCES [DM].dbo.DimWeapon([SK]),
+	FOREIGN KEY ([Date_SK]) REFERENCES [DM].dbo.DimDate([SK]),
+) ON [PRIMARY]
+
+INSERT INTO DM.dbo.FactAllIncident
+SELECT
+	di.SK AS Incident_SK,
+	da.SK AS Attack_SK,
+	dg.SK AS Group_SK,
+	dl.SK AS City_SK,
+	dt.SK AS Target_SK,
+	dw.SK AS WeaponSubType_SK,
+	dd.SK AS Date_SK,
+	si.PolEcoRelSoc,
+	si.LgAudience,
+	si.HumanLaw,
+	si.Success,
+	si.Suicide,
+	si.NrPerps,
+	si.NrPerpsCustody,
+	si.NrKills,
+	si.NrWounds,
+	si.PropDmgCat,
+	si.PropDmgValue,
+	si.HostageCount,
+	si.RansomAmount,
+	si.RansomPaid,
+	si.HostKidOutcome
+FROM DV.dbo.SatIncident si, 
+	 DM.dbo.DimIncident di, 
+	 DM.dbo.DimAttack da, 
+	 DV.dbo.LinkIncident_All l,
+	 DM.dbo.DimGroup dg, 
+	 DM.dbo.DimLocation dl,
+	 DM.dbo.DimTarget dt,
+	 DM.dbo.DimWeapon dw,
+	 DM.dbo.DimDate dd
+WHERE l.H_Incident_SQN = di.H_Incident_SQN AND
+	  l.H_Attack_SQN = da.H_Attack_SQN AND
+	  l.H_Group_SQN = dg.H_Group_SQN AND
+	  l.H_City_SQN = dl.H_City_SQN AND
+	  l.H_Target_SQN = dt.H_Target_SQN AND
+	  l.H_WeaponSubType_SQN = dw.H_WeaponSubType_SQN AND
+	  l.H_Incident_SQN = si.H_Incident_SQN AND
+	  si.IncidentDate = dd.Date
