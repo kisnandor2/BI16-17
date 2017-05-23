@@ -1,0 +1,223 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5229332c-dfb6-40f4-9f01-b05345520160" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Fact All Incident</ID>
+  <Name>Fact All Incident</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f747418b-079e-4753-9a91-d03a92cabfa1">
+    <DataSourceViewID>DM</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="5676db88-93d0-4397-97d6-54289e6fc22b">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="5031e433-cf7b-4d38-8c3f-df7ff9b72da3">
+      <ID>SK</ID>
+      <Name>SK</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4f0360ce-3c42-4522-a5ec-7c2fb467548f">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eed11651-11b8-4c23-aef8-b9ac640f041a">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="6902bff3-2047-4836-8982-c4544feef56e">
+          <AttributeID>Incident SK</AttributeID>
+          <Name>Incident SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b7e44690-d254-44dc-a469-95115a83fbaa">
+          <AttributeID>Group SK</AttributeID>
+          <Name>Group SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="29161ff4-9f48-4d8f-ba92-51865921d717">
+          <AttributeID>Date SK</AttributeID>
+          <Name>Date SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bb83e3e7-774a-46bc-b625-6a8f35997b77">
+          <AttributeID>Weapon Sub Type SK</AttributeID>
+          <Name>Weapon Sub Type SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a6eaaad7-6b8a-4856-882d-ad1b9b436d57">
+          <AttributeID>Attack SK</AttributeID>
+          <Name>Attack SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7796012f-3a94-46bb-bed0-834fed80076a">
+          <AttributeID>Target SK</AttributeID>
+          <Name>Target SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ec0f995c-7ce3-4e02-b968-48e7d2b6ecf8">
+          <AttributeID>City SK</AttributeID>
+          <Name>City SK</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="21807416-caa2-4d71-9a03-0689d0f4265b">
+      <ID>Incident SK</ID>
+      <Name>Incident SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d0218c60-954f-4720-b3e3-976335c8f678">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e34efc7d-0984-430e-be8b-cb2cbd959e62">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>Incident_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bd6012f7-afe0-4707-83c4-ac8ef3ff8398">
+      <ID>Group SK</ID>
+      <Name>Group SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b33fb474-72b8-412b-909e-2f7950332845">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b874015a-8fc6-49fa-b801-282c9d301e55">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>Group_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cf0b6503-5d70-4c37-afb4-4969313a898e">
+      <ID>Date SK</ID>
+      <Name>Date SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9cec7d18-bba1-458e-8758-95f922807d12">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ede8fd6b-69e4-40e3-88dd-865743a69d1d">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>Date_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="907caf31-aa9b-47f7-8b76-46edc8b26808">
+      <ID>Weapon Sub Type SK</ID>
+      <Name>Weapon Sub Type SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bc1e72db-7a53-462d-b690-5a4fca87f5dc">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f37c0385-49dd-42f2-80e5-9b7daebb93e0">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>WeaponSubType_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b1d405e0-a15d-47a9-8bf9-f69b4f0e7b40">
+      <ID>Attack SK</ID>
+      <Name>Attack SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2c3c07e5-26f7-4757-9738-326f0c03bb41">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="32caee89-b39b-4ee0-a4f3-0d20cf0406b3">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>Attack_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="359f0c3f-e12a-4524-ab5a-9a75377bc426">
+      <ID>Target SK</ID>
+      <Name>Target SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="95fe6b41-5893-4ded-b246-8626baee20d5">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e2a78b58-7dce-46be-9c7a-ec11ed1045bf">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>Target_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="73173fed-4ec5-44ea-b298-c9208bad4a7a">
+      <ID>City SK</ID>
+      <Name>City SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="619e1ad1-bfb8-4f24-a0bd-236b07f2d9d4">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e258e514-4b6c-4d4a-9e5e-84a67a3f79b7">
+            <TableID>dbo_FactAllIncident</TableID>
+            <ColumnID>City_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

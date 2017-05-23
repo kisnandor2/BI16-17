@@ -1,0 +1,376 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="41571231-232d-41cb-bebf-e1df09c11a13" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Incident</ID>
+  <Name>Dim Incident</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a3ba4b08-8f3f-4010-a81f-61b074b28923">
+    <DataSourceViewID>DM</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="b296b817-81d1-4288-b678-e89aff6cb53c">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="3fe9c89e-0068-4cb5-955d-7cb8d09e88a5">
+      <ID>SK</ID>
+      <Name>SK</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e270587a-c7c4-4eb4-9041-09ee3b0f0d8d">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="77422d7e-0ce2-4450-86ee-3fa7cfd392aa">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="7c31e258-b321-4a37-b5f6-6d0e6bfb60b9">
+          <AttributeID>Pol Eco Rel Soc</AttributeID>
+          <Name>Pol Eco Rel Soc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="97e48968-a0d9-4b4f-8477-c6c653a2a69a">
+          <AttributeID>Lg Audience</AttributeID>
+          <Name>Lg Audience</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="072c2ff9-dd80-4b88-aed4-01f80341b354">
+          <AttributeID>Human Law</AttributeID>
+          <Name>Human Law</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="538329d8-2c6b-4938-8564-60b1dac03e52">
+          <AttributeID>Success</AttributeID>
+          <Name>Success</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6fa087c8-d76a-4e12-8e4c-6049711724a9">
+          <AttributeID>Suicide</AttributeID>
+          <Name>Suicide</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c4bd9eba-d475-4679-ab6f-af147d6a8fe1">
+          <AttributeID>Nr Perps</AttributeID>
+          <Name>Nr Perps</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="de8c8232-8b42-440c-8eca-546a466a1534">
+          <AttributeID>Nr Perps Custody</AttributeID>
+          <Name>Nr Perps Custody</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="024a8c67-8c2b-40b5-b25a-42b6750d83ba">
+          <AttributeID>Nr Kills</AttributeID>
+          <Name>Nr Kills</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="81f9dc39-0d05-43df-8708-9cf00a92a9b0">
+          <AttributeID>Nr Wounds</AttributeID>
+          <Name>Nr Wounds</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fa02e9fa-85e2-43c1-87d9-0c6744060d86">
+          <AttributeID>Prop Dmg Cat</AttributeID>
+          <Name>Prop Dmg Cat</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b6382180-3d05-46c7-9dbf-612212030e50">
+          <AttributeID>Prop Dmg Value</AttributeID>
+          <Name>Prop Dmg Value</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="efd5cb48-48cd-4113-ba39-b6dcf4d08973">
+          <AttributeID>Hostage Count</AttributeID>
+          <Name>Hostage Count</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45fd6172-8d6a-4d03-908e-e31fbf049250">
+          <AttributeID>Ransom Amount</AttributeID>
+          <Name>Ransom Amount</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9111fb3c-76b3-44b5-b698-f88714ff4118">
+          <AttributeID>Ransom Paid</AttributeID>
+          <Name>Ransom Paid</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7f5b4ed3-3e2c-4beb-8955-52ec697fd0ba">
+          <AttributeID>Host Kid Outcome</AttributeID>
+          <Name>Host Kid Outcome</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="19c26b9a-d4bd-4f19-91d4-2e1e57fee50b">
+      <ID>Pol Eco Rel Soc</ID>
+      <Name>Pol Eco Rel Soc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="571ae471-7fef-43d7-9462-80b65cf7b2a7">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0a16d585-f143-4c88-b375-d882dd36ba20">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>PolEcoRelSoc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="89293ce7-8f64-41a3-8ac1-c2cf97933ad5">
+      <ID>Lg Audience</ID>
+      <Name>Lg Audience</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83339a35-b30a-4a64-92ee-2f00dd6f70c7">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a1137f8-ab11-4131-894d-cf96df292f5b">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>LgAudience</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="070d8bff-7b8e-41a4-bb8b-bb53af6ac572">
+      <ID>Human Law</ID>
+      <Name>Human Law</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e4ff212-6e34-4941-953a-36d6debff26d">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="db6a6fca-0e60-44fb-97d6-489f3724f243">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>HumanLaw</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c63c5d60-d7c5-4624-9f2d-19d63ddb61da">
+      <ID>Success</ID>
+      <Name>Success</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d762620-07ff-4e31-9231-e86147000c7c">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6c038ca5-cc19-4d70-b8af-8c57cc650a84">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>Success</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b83fc6ce-09c7-4a3e-8cf1-fcde88370e72">
+      <ID>Suicide</ID>
+      <Name>Suicide</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a08f75e8-00b4-4603-b116-6a61509b7d14">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5db04e7b-057d-4783-906e-c07f46e55d7d">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>Suicide</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="59cf3b38-41de-42a7-a343-07148111165f">
+      <ID>Nr Perps</ID>
+      <Name>Nr Perps</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6b0b091a-1ae3-49cf-8b87-bcf324a07176">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63315e27-6401-4a32-8d4b-745f1354f7ba">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>NrPerps</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1dc40288-dd6d-40ba-b7e3-de0401281d18">
+      <ID>Nr Perps Custody</ID>
+      <Name>Nr Perps Custody</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bb118825-00de-4096-8264-63e7b1d97f3b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c9f5760b-6367-48fb-9707-f63b2050ea78">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>NrPerpsCustody</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4b7735f1-65b2-4541-a47a-7443bbe7c53a">
+      <ID>Nr Kills</ID>
+      <Name>Nr Kills</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8cae9937-e494-448e-b38e-8f73ec35e018">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="99153146-961f-461f-ab33-cfc5e084e09b">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>NrKills</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2fdc3109-c8ab-41ad-813c-1676db8c4baa">
+      <ID>Nr Wounds</ID>
+      <Name>Nr Wounds</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="23fb057a-7a81-467d-ad2e-447aa302197b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8df84a3e-99f3-4a3b-a24f-a236da6292f1">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>NrWounds</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2d37699a-230a-4c0f-9a47-64b7527a30cc">
+      <ID>Prop Dmg Cat</ID>
+      <Name>Prop Dmg Cat</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6d166c8a-ed99-4a83-b1d5-4bd9012ae3e2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3924f918-af35-4193-a424-f75405d57672">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>PropDmgCat</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b4b297d5-88ba-404a-bbab-7d8b75578561">
+      <ID>Prop Dmg Value</ID>
+      <Name>Prop Dmg Value</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4d78e28e-de40-49e7-91ab-c4b865608870">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6c7936ff-e612-4dd0-a45f-865b6528e4cc">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>PropDmgValue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fa74b9fb-d569-4d5d-a9e7-d05eee62245a">
+      <ID>Hostage Count</ID>
+      <Name>Hostage Count</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fb543091-ac27-476c-bca9-d729d1459477">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="94414ab2-6849-4031-a13b-63a86acfe5a4">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>HostageCount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="02ca6e90-2741-45c1-96a2-35768f88ab5e">
+      <ID>Ransom Amount</ID>
+      <Name>Ransom Amount</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83dedcc1-d781-4a37-86be-df42f023a443">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="81e66919-b14d-4e13-ae1f-b4483d471745">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>RansomAmount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1fbc1786-3f1a-4bfc-84a3-22408d61a791">
+      <ID>Ransom Paid</ID>
+      <Name>Ransom Paid</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c1bedbab-32ab-41a3-bd17-0a6e95f12a60">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d656d7c0-22b5-4be8-85e2-35476e4259d7">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>RansomPaid</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8ad9979c-f47e-430d-a31b-2a23af9693c3">
+      <ID>Host Kid Outcome</ID>
+      <Name>Host Kid Outcome</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0645a245-00c3-4d84-8cd4-0ed552593039">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="05aa02bc-9097-4585-adca-6a912df519b7">
+            <TableID>dbo_DimIncident</TableID>
+            <ColumnID>HostKidOutcome</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

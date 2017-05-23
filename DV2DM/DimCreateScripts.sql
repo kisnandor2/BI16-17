@@ -70,7 +70,8 @@ WHERE
 	lrc.H_Country_SQN = hco.H_Country_SQN AND
 	lrc.H_Region_SQN = hr.H_Region_SQN AND
 	lcc.H_City_SQN = hci.H_City_SQN AND
-	lcc.H_Country_SQN = hco.H_Country_SQN
+	lcc.H_Country_SQN = hco.H_Country_SQN AND
+	sci.CityName IS NOT NULL;
 
 ALTER TABLE DM.dbo.DimLocation
 ADD CONSTRAINT PK_DimLocation PRIMARY KEY (SK);
@@ -117,6 +118,26 @@ WHERE h.H_Incident_SQN = s.H_Incident_SQN
 ALTER TABLE DM.dbo.DimIncident
 ADD CONSTRAINT PK_DimIncident PRIMARY KEY (SK);
 
+
+update [DM].[dbo].[DimIncident] set NrPerps = 0 where NrPerps is NULL;
+
+update [DM].[dbo].[DimIncident] set NrPerpsCustody = 0 where NrPerpsCustody is NULL;
+
+update [DM].[dbo].[DimIncident] set NrKills = 0 where NrKills is NULL;
+
+update [DM].[dbo].[DimIncident] set NrWounds = 0 where NrWounds is NULL;
+
+update [DM].[dbo].[DimIncident] set PropDmgCat = 0 where PropDmgCat is NULL;
+
+update [DM].[dbo].[DimIncident] set PropDmgValue = 0 where PropDmgValue is NULL;
+
+update [DM].[dbo].[DimIncident] set HostageCount = 0 where HostageCount is NULL;
+
+update [DM].[dbo].[DimIncident] set RansomAmount = 0 where RansomAmount is NULL;
+
+update [DM].[dbo].[DimIncident] set RansomPaid = 0 where RansomPaid is NULL;
+
+update [DM].[dbo].[DimIncident] set HostKidOutcome = 0 where HostKidOutcome is NULL;
 --DimTarget
 IF EXISTS (SELECT * FROM DM.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[DimTarget]') AND type in (N'U'))
 BEGIN
@@ -153,7 +174,8 @@ WHERE
 	ltt_tst.H_TargetSubType_SQN = htst.H_TargetSubType_SQN AND
 	ltt_tst.H_TargetType_SQN = htt.H_TargetType_SQN AND
 	ltn.H_Target_SQN = ht.H_Target_SQN AND
-	ltn.H_Nationality_SQN = hn.H_Nationality_SQN
+	ltn.H_Nationality_SQN = hn.H_Nationality_SQN AND
+	st.S_TargetName IS NOT NULL;
 
 ALTER TABLE DM.dbo.DimTarget
 ADD CONSTRAINT PK_DimTarget PRIMARY KEY (SK);
@@ -168,7 +190,7 @@ IF OBJECT_ID('tempdb..#temp') IS NOT NULL DROP TABLE #temp
 IF NOT EXISTS (SELECT * FROM Dm.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[DimDate]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [DM].[dbo].[DimDate](
-	[SK] [int] NOT NULL,
+	[SK] [bigint] NOT NULL,
 	[Date] [date] NULL,
 	[Semester] [int] NULL,
 	[Quarter] [int] NULL,
@@ -210,7 +232,7 @@ CREATE SEQUENCE Seq
 	INCREMENT BY 1
 GO
 
-
+/*
 --FactAllIncident
 IF EXISTS (SELECT * FROM DM.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[FactAllIncident]') AND type in (N'U'))
 BEGIN
@@ -290,4 +312,4 @@ WHERE l.H_Incident_SQN = di.H_Incident_SQN AND
 	  l.H_Target_SQN = dt.H_Target_SQN AND
 	  l.H_WeaponSubType_SQN = dw.H_WeaponSubType_SQN AND
 	  l.H_Incident_SQN = si.H_Incident_SQN AND
-	  si.IncidentDate = dd.Date
+	  si.IncidentDate = dd.Date */

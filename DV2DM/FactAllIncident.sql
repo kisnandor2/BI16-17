@@ -201,4 +201,4 @@ CLOSE linkCursor;
 DEALLOCATE linkCursor;  
 
 END
-select count(distinct(city)) from SA.dbo.[OLE DB Destination];
+--select count(distinct(city)) from SA.dbo.[OLE DB Destination];
