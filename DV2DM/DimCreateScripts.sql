@@ -232,7 +232,7 @@ CREATE SEQUENCE Seq
 	INCREMENT BY 1
 GO
 
-/*
+
 --FactAllIncident
 IF EXISTS (SELECT * FROM DM.sys.objects WHERE object_id = OBJECT_ID(N'[DM].[dbo].[FactAllIncident]') AND type in (N'U'))
 BEGIN
@@ -309,7 +309,9 @@ WHERE l.H_Incident_SQN = di.H_Incident_SQN AND
 	  l.H_Attack_SQN = da.H_Attack_SQN AND
 	  l.H_Group_SQN = dg.H_Group_SQN AND
 	  l.H_City_SQN = dl.H_City_SQN AND
+	  l.H_Country_SQN = dl.H_Country_SQN AND
 	  l.H_Target_SQN = dt.H_Target_SQN AND
 	  l.H_WeaponSubType_SQN = dw.H_WeaponSubType_SQN AND
+	  l.H_WeaponType_SQN = dw.H_WeaponType_SQN AND
 	  l.H_Incident_SQN = si.H_Incident_SQN AND
-	  si.IncidentDate = dd.Date */
+	  si.IncidentDate = dd.Date 
