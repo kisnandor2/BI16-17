@@ -1,6 +1,6 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="68f7b37a-afe6-4f51-ac60-f67ede7f4ab1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
-  <ID>Dim Incident</ID>
-  <Name>Dim Incident</Name>
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1320dca1-8740-4dbc-8048-9194d3975abf" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Weapon</ID>
+  <Name>Dim Weapon</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
   <Annotations>
@@ -42,25 +42,25 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c08187d8-1f35-4fbf-93a0-ffe360cd0ac2">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="054186dd-7d25-4d26-8924-9fa3230dc1eb">
     <DataSourceViewID>DM</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="c2f8535e-ec11-40a9-9932-1bb443fce196">
+  <ErrorConfiguration dwd:design-time-name="d8da7a92-be47-4bae-80dc-7e8d74773508">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="b291e037-7fa1-4082-afa2-0a42cdb30edb">
+    <Attribute dwd:design-time-name="edba8847-f9bc-40ee-a020-841e328461e2">
       <ID>SK</ID>
       <Name>SK</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="98fed0d5-e887-4df2-9e94-6ae7539a89d6">
+        <KeyColumn dwd:design-time-name="60bf5b76-9341-4317-9927-359719b2c36e">
           <DataType>BigInt</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="9d07d31a-6ae8-411c-8f24-0382ebfe8bb7">
-            <TableID>dbo_DimIncident</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d6bdb43a-79cc-463f-8047-5a4404d12507">
+            <TableID>dbo_DimWeapon</TableID>
             <ColumnID>SK</ColumnID>
           </Source>
         </KeyColumn>

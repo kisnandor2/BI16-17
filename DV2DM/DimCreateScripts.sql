@@ -314,4 +314,7 @@ WHERE l.H_Incident_SQN = di.H_Incident_SQN AND
 	  l.H_WeaponSubType_SQN = dw.H_WeaponSubType_SQN AND
 	  l.H_WeaponType_SQN = dw.H_WeaponType_SQN AND
 	  l.H_Incident_SQN = si.H_Incident_SQN AND
+	  l.H_TargetType_SQN = dt.H_TargetType_SQN AND
+	  l.H_TargetSubType_SQN = dt.H_TargetSubType_SQN AND
+	  l.H_Nationality_SQN = dt.H_Nationality_SQN AND
 	  si.IncidentDate = dd.Date 

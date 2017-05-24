@@ -12,28 +12,25 @@
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Dim Date 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Attack 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Fact All Incident</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Group 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Weapon 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Target 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Location 1</ID>
-      </Dimension>
-      <Dimension>
         <ID>Dim Incident</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Group</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Attack</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Date</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Weapon</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Location</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Target</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
@@ -41,10 +38,10 @@
         <ID>DM</ID>
         <MeasureGroups>
           <MeasureGroup>
-            <ID>Dim Date</ID>
+            <ID>Dim Incident</ID>
             <Partitions>
               <Partition>
-                <ID>Dim Date</ID>
+                <ID>Dim Incident</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
@@ -53,38 +50,6 @@
             <Partitions>
               <Partition>
                 <ID>Fact All Incident</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Dim Attack</ID>
-            <Partitions>
-              <Partition>
-                <ID>Dim Attack</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Dim Group</ID>
-            <Partitions>
-              <Partition>
-                <ID>Dim Group</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Dim Weapon</ID>
-            <Partitions>
-              <Partition>
-                <ID>Dim Weapon</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Dim Target</ID>
-            <Partitions>
-              <Partition>
-                <ID>Dim Target</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

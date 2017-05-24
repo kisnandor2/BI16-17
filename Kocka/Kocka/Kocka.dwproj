@@ -20,36 +20,32 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Date 1.dim</Name>
-      <FullPath>Dim Date 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Attack 1.dim</Name>
-      <FullPath>Dim Attack 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Fact All Incident.dim</Name>
-      <FullPath>Fact All Incident.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Group 1.dim</Name>
-      <FullPath>Dim Group 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Weapon 1.dim</Name>
-      <FullPath>Dim Weapon 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Target 1.dim</Name>
-      <FullPath>Dim Target 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Location 1.dim</Name>
-      <FullPath>Dim Location 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Incident.dim</Name>
       <FullPath>Dim Incident.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Group.dim</Name>
+      <FullPath>Dim Group.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Attack.dim</Name>
+      <FullPath>Dim Attack.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Weapon.dim</Name>
+      <FullPath>Dim Weapon.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Location.dim</Name>
+      <FullPath>Dim Location.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Target.dim</Name>
+      <FullPath>Dim Target.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

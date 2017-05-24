@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Kocka</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>7fnYSKDk8n+3F49prdy2s2Ho+GE=24/05/2017 17:54:4424/05/2017 17:54:44</TimeStamp>
+        <ID>
+          <String>DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>7CG0IY7ki7hrQPFxdm6l6pKNJHw=24/05/2017 17:54:5724/05/2017 17:54:56</TimeStamp>
+        <ID>
+          <String>DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>recZFtHH3EeiFc8wNhAY4oZbSgE=24/05/2017 18:02:5724/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Incident</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>oz6N6KwfN0NHdh/nTJgd3Wb617I=24/05/2017 18:02:5824/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Group</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>F8S8mM6/XD2f+wnk8depgeWXwwE=24/05/2017 18:02:5824/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Attack</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>NBjti/6of3l71P4alBpH/nWkBLA=24/05/2017 18:02:5824/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>G97aneRmFSgddT3awm1sOzkHfag=24/05/2017 18:02:5824/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Weapon</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>FsLn3GFFmxnE0SHIUfpdqcM8AoM=24/05/2017 18:19:5224/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>efEHJuh045kY6Zay6ctApRGCxnI=24/05/2017 18:02:5824/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>Dim Target</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>+sO3NAIJlIZ/tiaZjKOSLUs88+Y=24/05/2017 18:08:5424/05/2017 18:02:570Ya8onYXDqpxaSnB456UMSQI5H4=24/05/2017 18:02:5724/05/2017 18:02:57</TimeStamp>
+        <ID>
+          <String>DM</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>+fRsBlLoaHJ/wJA2q0hmpg6iR5U=24/05/2017 16:43:2124/05/2017 16:43:21</TimeStamp>
+      <ID>
+        <String>Kocka</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2017-05-24T15:19:53.523333Z</LastDeployed>
+</DeploymentSnapshot>
