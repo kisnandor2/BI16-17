@@ -35,8 +35,32 @@
     </Dimensions>
     <Cubes>
       <Cube>
-        <ID>DM</ID>
+        <ID>DM 1</ID>
         <MeasureGroups>
+          <MeasureGroup>
+            <ID>Dim Attack</ID>
+            <Partitions>
+              <Partition>
+                <ID>Dim Attack</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Dim Date</ID>
+            <Partitions>
+              <Partition>
+                <ID>Dim Date</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Dim Group</ID>
+            <Partitions>
+              <Partition>
+                <ID>Dim Group</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
           <MeasureGroup>
             <ID>Dim Incident</ID>
             <Partitions>
@@ -46,18 +70,34 @@
             </Partitions>
           </MeasureGroup>
           <MeasureGroup>
-            <ID>Fact All Incident</ID>
-            <Partitions>
-              <Partition>
-                <ID>Fact All Incident</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
             <ID>Dim Location</ID>
             <Partitions>
               <Partition>
                 <ID>Dim Location</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Dim Target</ID>
+            <Partitions>
+              <Partition>
+                <ID>Dim Target</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Dim Weapon</ID>
+            <Partitions>
+              <Partition>
+                <ID>Dim Weapon</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact All Incident</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact All Incident</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

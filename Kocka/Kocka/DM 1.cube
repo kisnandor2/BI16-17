@@ -1,0 +1,1102 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3eb4fdb1-3a36-46db-9e2a-05cbef84b1d6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DM 1</ID>
+  <Name>DM 1</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="1f1159a9-f4f0-4165-bedf-d5ae3697b4b6">
+      <ID>Dim Attack</ID>
+      <Name>Dim Attack</Name>
+      <DimensionID>Dim Attack</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4a01b1c4-3aae-4004-8abf-b91d4dc0dadf">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="33990cef-168e-48c0-99ed-9177e96ab7b3">
+          <AttributeID>S Attack Type Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="7684c0ac-0512-47e4-9a59-0342d83d2abe">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="07269690-7750-4e1b-b4fa-7e9b56fd08dc">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="448a79ba-bd5d-4946-ad9f-16deeee585ef">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="40f519d9-89ed-4e25-960b-0c3619cd2707">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3293825-cbff-4939-afb7-c1bd8b3103be">
+          <AttributeID>Semester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e3a63ced-d62d-4663-9cea-1c6c399150ef">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eadd7a98-9f6d-4df0-8d6d-8e599e591597">
+          <AttributeID>Year Number</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="f0df0073-c9f6-400e-ae34-ad560d6aabc9">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="f41d00da-89f3-4a0c-a912-ec2353b01273">
+      <ID>Dim Group</ID>
+      <Name>Dim Group</Name>
+      <DimensionID>Dim Group</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b38c9442-dfd6-438b-b664-641775b1f2bb">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="37c22934-5b28-45f6-96af-9f8aea0f8c88">
+          <AttributeID>S Group Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="392d2520-06a7-46da-ba46-f41ff3c78786">
+          <AttributeID>S Group Card Num</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="7f2f73ce-20c8-419b-b6b3-8eea92454049">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="7eb9e90d-5d9a-4bef-90ba-0b0819bddbae">
+      <ID>Dim Incident</ID>
+      <Name>Dim Incident</Name>
+      <DimensionID>Dim Incident</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="68e64c4b-2d09-42de-8afe-60bcbd5f3bcb">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="4cb8cb0b-6632-41f1-b3ce-dd9e598ae7d8">
+      <ID>Dim Location</ID>
+      <Name>Dim Location</Name>
+      <DimensionID>Dim Location</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="1716cd64-f041-49b7-ad8b-6d9d58bf5def">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3db90eb-d193-4a58-a4d0-b8f7de7cd1c9">
+          <AttributeID>Country Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="efa7233d-eaf3-48c0-af88-994afb8f3a72">
+          <AttributeID>Region Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a99d2644-a379-4a99-86d1-c1f0acd3e2d3">
+          <AttributeID>City Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="2f2dacb1-8753-4b06-8edd-e28efa20a6ce">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="d6539d0d-4562-499c-9fb3-76a4380464e8">
+      <ID>Dim Target</ID>
+      <Name>Dim Target</Name>
+      <DimensionID>Dim Target</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d5610761-b1ab-47f5-ac55-414f731eda6c">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b40cb0d2-ab8b-406e-b551-64e2db309710">
+          <AttributeID>S Target Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f3ed3956-e761-4c4e-8097-5c989d989065">
+          <AttributeID>Target Type Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c9fcee1a-fb31-4e8e-ae83-794dcae6e48f">
+          <AttributeID>Target Sub Type Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bb3d9d5c-bf65-49be-8f10-0a1441c8c0ed">
+          <AttributeID>Nationality Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="f51ff925-ee06-47f3-a2c5-b9ca863022de">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="f0bf88d4-0a75-464c-ab04-e334b205c456">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="42832a77-3665-4efb-9713-a800e281160d">
+      <ID>Dim Weapon</ID>
+      <Name>Dim Weapon</Name>
+      <DimensionID>Dim Weapon</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="75d26573-b2aa-41b9-9083-8a40ddd0350c">
+          <AttributeID>SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fe62b653-35a8-45bf-8619-c9264043588f">
+          <AttributeID>Weapon Type Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e0cf0326-c597-4e7e-8715-5b1fff0a4096">
+          <AttributeID>Weapon Sub Type Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="2546eebb-d533-46b7-ade5-babce39e7911">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="e63ee9b2-16dc-4c5c-bda5-d566dabd4c03">
+      <ID>Dim Attack</ID>
+      <Name>Dim Attack</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="b06b3e3a-50c8-48ec-8028-7191f4d24160">
+          <ID>H Attack SQN</ID>
+          <Name>H Attack SQN</Name>
+          <Source dwd:design-time-name="56459c83-f9a3-4c4d-a682-09b85ac85025">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ff2c3e92-e47a-4477-8788-15679d149bed">
+              <TableID>dbo_DimAttack</TableID>
+              <ColumnID>H_Attack_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b1d80e25-d580-4127-b0a4-8411174d0d51">
+          <ID>Attack ID</ID>
+          <Name>Attack ID</Name>
+          <Source dwd:design-time-name="fa1a0754-c452-4638-8159-5b6e58a92963">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a2a4eead-d38a-4b87-adce-96ef87caa570">
+              <TableID>dbo_DimAttack</TableID>
+              <ColumnID>AttackID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4e2a547d-b9c7-45ed-b9d9-b5d21fdbc4c4">
+          <ID>Dim Attack Count</ID>
+          <Name>Dim Attack Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="db6649f6-cb64-4991-93f1-12fdb9f811fc">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="70415df5-7996-4cc9-8509-99e0fe57c641">
+              <TableID>dbo_DimAttack</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="7828bd76-0b79-4d83-bf1c-6f4d98e98f8c">
+          <CubeDimensionID>Dim Attack</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a1575941-2784-4673-b3da-f3827670494a">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="059282d8-57da-4b38-a8cb-050f88561371">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e361ce48-7591-4156-a8a2-fb82cae18d4a">
+                    <TableID>dbo_DimAttack</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="3ded1ae1-c208-4699-81bb-f4880cf2c191">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="bd73d9ac-975f-49cc-afe9-b62f06558972">
+          <ID>Semester</ID>
+          <Name>Semester</Name>
+          <Source dwd:design-time-name="fc3cb06f-5297-42a7-9559-e736e3ae428a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6a7f8e24-410f-475d-8523-79bf218f52a8">
+              <TableID>dbo_DimDate</TableID>
+              <ColumnID>Semester</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3dd60d31-05f8-47a2-98bd-8e7deca5daa3">
+          <ID>Quarter</ID>
+          <Name>Quarter</Name>
+          <Source dwd:design-time-name="88559de6-b95d-4dc5-b771-1b881468d41e">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="076fa7a7-9fb9-40c1-8126-f812b862be10">
+              <TableID>dbo_DimDate</TableID>
+              <ColumnID>Quarter</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fad788d3-ac30-4341-8885-9f377e8f8ff3">
+          <ID>Month Number</ID>
+          <Name>Month Number</Name>
+          <Source dwd:design-time-name="e0f53860-03ef-44e0-ad4a-22eb9611ed56">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ef0f6561-5d35-4ffd-a84c-c0bf3ca3dbdf">
+              <TableID>dbo_DimDate</TableID>
+              <ColumnID>MonthNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7c8e1f3a-f71d-42ae-ad39-41204848bb74">
+          <ID>Day Number</ID>
+          <Name>Day Number</Name>
+          <Source dwd:design-time-name="a849381b-1316-4f1c-8e49-1dabffb4fe4e">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9fa0e5c7-474a-4797-97ce-4a09710b6282">
+              <TableID>dbo_DimDate</TableID>
+              <ColumnID>DayNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="29f11d8b-6a45-4ac5-b581-12be24c79b33">
+          <ID>Year Number</ID>
+          <Name>Year Number</Name>
+          <Source dwd:design-time-name="aaab2f62-92f4-4026-8063-3e7300579801">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="78e29f40-ce6f-4ea6-b3e4-c19b8633ad64">
+              <TableID>dbo_DimDate</TableID>
+              <ColumnID>YearNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c371f7c4-c767-4bc5-b5e8-3b3c30d28df5">
+          <ID>Dim Date Count</ID>
+          <Name>Dim Date Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="6849a149-8b3f-42ab-b025-628d73a9468a">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="98cad31e-f33b-4d5e-a750-03c90af428b8">
+              <TableID>dbo_DimDate</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="216da4f3-afbb-433b-a046-9d9bbeb80b87">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d84031d3-4e02-483c-959d-c558910a9d91">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3f11387d-e90c-4b07-90d7-a2961397a0dc">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c5531584-3758-40aa-b607-0763b841130a">
+                    <TableID>dbo_DimDate</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="1b0a5900-8804-4564-b084-b9188b180f11">
+      <ID>Dim Group</ID>
+      <Name>Dim Group</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="b1edc9cd-e2d0-4617-a649-858193ddcbf6">
+          <ID>H Group SQN</ID>
+          <Name>H Group SQN</Name>
+          <Source dwd:design-time-name="f2f0d946-95ce-4b47-959b-0788bae1fdff">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="46344943-7176-4c09-9f31-3a05dd887957">
+              <TableID>dbo_DimGroup</TableID>
+              <ColumnID>H_Group_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c371ed75-7cb1-4e90-bb8e-2bfa1616685d">
+          <ID>S Group Card Num</ID>
+          <Name>S Group Card Num</Name>
+          <Source dwd:design-time-name="ec128025-d452-4bc6-9a47-3c3457032118">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="616734c7-8eb5-4625-bb5c-944ace029557">
+              <TableID>dbo_DimGroup</TableID>
+              <ColumnID>S_Group_CardNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ec314598-b62b-4266-93b3-ca743a20e64f">
+          <ID>Dim Group Count</ID>
+          <Name>Dim Group Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="75f61b00-224c-4453-b45a-150fa0c21aac">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="89d65a3d-79bc-4144-8521-ef4f996c2377">
+              <TableID>dbo_DimGroup</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="da2ff703-247d-4d0a-97d3-3bdd8cfa35b0">
+          <CubeDimensionID>Dim Group</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="53235e34-daa4-4b26-acf7-53b20bbcbe4f">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1d15cee1-6d10-405f-a0c9-c5627712f8aa">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="239fb7cb-493a-4ee7-b5e3-724417030bdb">
+                    <TableID>dbo_DimGroup</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="a8ebef81-e2c0-4c29-9cda-aec672bebd8c">
+      <ID>Dim Incident</ID>
+      <Name>Dim Incident</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="e10887e0-de5d-4562-b3a1-34d9bac40197">
+          <ID>H Incident SQN</ID>
+          <Name>H Incident SQN</Name>
+          <Source dwd:design-time-name="2729fe1b-c9b1-4d8c-ac7f-321535ccfe2b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6e28ecd6-6ea9-4080-881b-42cd130068ac">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>H_Incident_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="63481a44-06f8-424d-ac69-3548b6c728a4">
+          <ID>Nr Perps</ID>
+          <Name>Nr Perps</Name>
+          <Source dwd:design-time-name="670330e6-1fdf-434a-8369-621d389461db">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="50ebc673-2ff2-4043-b223-cff86d641b2c">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>NrPerps</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f5ef4296-6acd-48ba-9cc1-d33a8cb1aa13">
+          <ID>Nr Perps Custody</ID>
+          <Name>Nr Perps Custody</Name>
+          <Source dwd:design-time-name="4174b5e1-9d03-4b90-a70c-8b39e786813f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a2dbffd2-4d52-49ea-9d13-f682e2502508">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>NrPerpsCustody</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="65fef802-4e3e-4221-aa8f-60d3a3bc73cd">
+          <ID>Nr Kills</ID>
+          <Name>Nr Kills</Name>
+          <Source dwd:design-time-name="ed8b38b5-eaff-44c6-a8d4-b20fb406cfc9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b3e67214-4d11-4651-82d7-2b981c419cdd">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>NrKills</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b32d8058-8e70-4e3d-a9dc-7d81f9aac9cf">
+          <ID>Nr Wounds</ID>
+          <Name>Nr Wounds</Name>
+          <Source dwd:design-time-name="2de45d05-008c-4c3d-b6e4-8df3c900ff21">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a762d3f0-8379-4fe3-a7dc-3528198a064e">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>NrWounds</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a21ee767-0989-4e6b-97f7-3ca25a947fa1">
+          <ID>Prop Dmg Cat</ID>
+          <Name>Prop Dmg Cat</Name>
+          <Source dwd:design-time-name="9335bdbe-93a4-44d9-bb1b-d677b5272632">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8a98acff-6f59-443a-9328-2fb962fdbd98">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>PropDmgCat</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6cfb8c8c-7244-4255-bedf-17a993712108">
+          <ID>Prop Dmg Value</ID>
+          <Name>Prop Dmg Value</Name>
+          <Source dwd:design-time-name="c6a9e41e-d92c-4702-816a-90c026c3f7cd">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="76960c58-0a23-4c83-b122-677a59fa45b6">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>PropDmgValue</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cf29dab7-dc67-49b1-b8bc-524fa8e49197">
+          <ID>Hostage Count</ID>
+          <Name>Hostage Count</Name>
+          <Source dwd:design-time-name="44b57dee-a068-46bb-8f24-1d7e69c44e2a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="63fdbcd4-c4e7-4c09-8297-f9bc451e11df">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>HostageCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a7e8fdd5-cb2d-4793-b46e-8183be1db9b5">
+          <ID>Ransom Amount</ID>
+          <Name>Ransom Amount</Name>
+          <Source dwd:design-time-name="9a377bac-f26d-4c6d-a82e-d1a8f36ee53c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="aa86f0ae-d9f7-4871-9228-c7f934571cef">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>RansomAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1bb242e9-6f82-4300-8617-06f94469cc92">
+          <ID>Ransom Paid</ID>
+          <Name>Ransom Paid</Name>
+          <Source dwd:design-time-name="a15cd115-9cef-4997-9774-ce2c484b4537">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="773e02ad-63e8-48c0-a439-55de7e1ec6b6">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>RansomPaid</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ed45710d-2494-435d-9cd3-058c8f7e299e">
+          <ID>Host Kid Outcome</ID>
+          <Name>Host Kid Outcome</Name>
+          <Source dwd:design-time-name="c566c9c8-f4cb-4192-afb9-f6fb78a6ed4f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b7e7b9ed-b290-45d3-99ec-9043de4f3cee">
+              <TableID>dbo_DimIncident</TableID>
+              <ColumnID>HostKidOutcome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b6cc1935-9244-4948-bf58-095fa64d4484">
+          <ID>Dim Incident Count</ID>
+          <Name>Dim Incident Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="5628c5bd-31d5-4597-a09e-b9f4a1f74681">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="599ac485-c22a-4289-a2f9-fc4173cf9ca0">
+              <TableID>dbo_DimIncident</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="c6f917e2-973e-49f3-93f0-e551d8734fff">
+          <CubeDimensionID>Dim Incident</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0f15319d-f2be-4634-b618-c88267501174">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="efddd48c-67b1-47af-907d-c4c687ed9405">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="868f60c1-e8a5-4c05-a8d0-1d8aecc7851f">
+                    <TableID>dbo_DimIncident</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="4d247805-f978-4c3f-87ba-6625a2149653">
+      <ID>Dim Location</ID>
+      <Name>Dim Location</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="caf06db5-60b7-4bef-9c06-7bd759c52bc8">
+          <ID>H City SQN</ID>
+          <Name>H City SQN</Name>
+          <Source dwd:design-time-name="061103ff-cd3a-491c-b141-b84d813049ca">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0ac3dd01-47aa-4938-ae88-710d312c6390">
+              <TableID>dbo_DimLocation</TableID>
+              <ColumnID>H_City_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8abf4140-6b33-4645-b73d-2b4456b3d24b">
+          <ID>H Country SQN</ID>
+          <Name>H Country SQN</Name>
+          <Source dwd:design-time-name="ce16c9c7-6600-44da-a9e1-54a19f2103ad">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1ebb607f-9165-4a6f-ad6b-3693c34d91f9">
+              <TableID>dbo_DimLocation</TableID>
+              <ColumnID>H_Country_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7ad3a5cc-56eb-48ee-8963-74a606a0c56c">
+          <ID>H Region SQN</ID>
+          <Name>H Region SQN</Name>
+          <Source dwd:design-time-name="dfd8c418-7d82-4eb7-8ddf-4b161f4a5a7c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="858a1a0f-e3bd-4970-8d22-ecff3dbe06f9">
+              <TableID>dbo_DimLocation</TableID>
+              <ColumnID>H_Region_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c180cf82-e514-4f5e-8ecd-e68511982276">
+          <ID>Dim Location Count</ID>
+          <Name>Dim Location Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="31d04bd3-9963-4317-a3c6-185bfb63e09a">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="8864cad3-d053-4689-a1f5-9cd0b438abf0">
+              <TableID>dbo_DimLocation</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="ef9dc006-3c4e-42ea-bd0b-16e1dc79883e">
+          <CubeDimensionID>Dim Location</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a7e68be6-e5ff-45e1-a641-c308dd7d5bee">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a619234a-758e-482b-b0f6-4a40545d100f">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="76079240-ca19-46c2-a4e5-67571d8a6854">
+                    <TableID>dbo_DimLocation</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="e2fdbf50-380c-4acd-9628-f3d5fc27a6a9">
+      <ID>Dim Target</ID>
+      <Name>Dim Target</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="7c0c5404-63c3-4573-80bb-3476b502188f">
+          <ID>H Target SQN</ID>
+          <Name>H Target SQN</Name>
+          <Source dwd:design-time-name="2a6100cd-340e-495a-aaeb-bf6fa2df12b3">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4f2f60af-3432-4bb7-85d0-35089587f816">
+              <TableID>dbo_DimTarget</TableID>
+              <ColumnID>H_Target_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6f7bdc15-d585-47d1-8c53-220df4aceb09">
+          <ID>H Target Type SQN</ID>
+          <Name>H Target Type SQN</Name>
+          <Source dwd:design-time-name="57ab7b67-c8d5-497e-bb7e-33b68959ad2b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bad94d19-238f-478f-975a-bcc46eee0979">
+              <TableID>dbo_DimTarget</TableID>
+              <ColumnID>H_TargetType_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ce8427d7-37b4-4a54-abd4-5022e735333f">
+          <ID>H Target Sub Type SQN</ID>
+          <Name>H Target Sub Type SQN</Name>
+          <Source dwd:design-time-name="8eb52a08-0eea-4e43-97e6-46e258f957a7">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b1932eeb-e92a-4677-81cf-96c2c9ee6591">
+              <TableID>dbo_DimTarget</TableID>
+              <ColumnID>H_TargetSubType_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="77c55e55-8257-4787-9b20-3fa2539a3ea7">
+          <ID>H Nationality SQN</ID>
+          <Name>H Nationality SQN</Name>
+          <Source dwd:design-time-name="427bc012-8eaf-4bc7-adb3-3bade2e033ef">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c96823c0-bd55-4287-a4e2-ecd26d996221">
+              <TableID>dbo_DimTarget</TableID>
+              <ColumnID>H_Nationality_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="af87ce5e-5ce0-4e39-b438-062dc0c53c80">
+          <ID>Dim Target Count</ID>
+          <Name>Dim Target Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="4adf975d-98b6-4c15-9874-5bc055001efc">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="53a0d6b4-de63-4604-88c8-63d51482eb6e">
+              <TableID>dbo_DimTarget</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="0a0c7bd4-4294-4599-9b05-696a9a631769">
+          <CubeDimensionID>Dim Target</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6ae3b7b2-8993-4064-a13d-ec0b981d5670">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3abbe147-5a7c-4319-ad6e-385e1130e362">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d40d560c-5967-44fa-9335-2bd1b4c58467">
+                    <TableID>dbo_DimTarget</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="4a5bab60-719b-44df-a3b2-a7fccd6c43a6">
+      <ID>Dim Weapon</ID>
+      <Name>Dim Weapon</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="84ad5932-1567-4419-95e9-9d11bd54e991">
+          <ID>H Weapon Type SQN</ID>
+          <Name>H Weapon Type SQN</Name>
+          <Source dwd:design-time-name="0f172987-92c5-4113-a6f0-9f30bb9c2325">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bd11008f-0f20-4704-9d83-d670d81bac3e">
+              <TableID>dbo_DimWeapon</TableID>
+              <ColumnID>H_WeaponType_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6c056b3b-dc0e-41fd-bb03-506394630331">
+          <ID>H Weapon Sub Type SQN</ID>
+          <Name>H Weapon Sub Type SQN</Name>
+          <Source dwd:design-time-name="f1c67332-cc65-4b67-8fd4-c9e2fdccffff">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fbb465b9-90df-4c73-bd27-bf8fe196d1d5">
+              <TableID>dbo_DimWeapon</TableID>
+              <ColumnID>H_WeaponSubType_SQN</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1ad80e54-14ed-41e2-b55c-1346757824b8">
+          <ID>Dim Weapon Count</ID>
+          <Name>Dim Weapon Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="7c359152-5120-45fc-99aa-6bffd437410c">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="42c32bc4-3808-4e2d-9f28-ae01e1ea0ce8">
+              <TableID>dbo_DimWeapon</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="8953c1d2-45f9-40e8-9299-8413fe40a8f5">
+          <CubeDimensionID>Dim Weapon</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="cff11c4a-aa71-414d-a327-e08614700748">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5506f328-7e66-4b76-9cc3-6f45b5f3d24e">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bc5430cd-f252-4be2-bd26-72af3eaaf964">
+                    <TableID>dbo_DimWeapon</TableID>
+                    <ColumnID>SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="73c9ab39-7d1d-4bda-8c96-2b7f1634cd2f">
+      <ID>Fact All Incident</ID>
+      <Name>Fact All Incident</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c96a65ac-b2ad-4022-9653-a9481a982c42">
+          <ID>Nr Perps - Fact All Incident</ID>
+          <Name>Nr Perps - Fact All Incident</Name>
+          <Source dwd:design-time-name="5232ec7f-806c-4fe2-8ad1-bc1b95c1de84">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ccf9b3ed-a231-4dd4-b800-912e44d67243">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>NrPerps</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e5a5a8cf-af3f-4a78-a08f-4274eb23e84c">
+          <ID>Nr Perps Custody - Fact All Incident</ID>
+          <Name>Nr Perps Custody - Fact All Incident</Name>
+          <Source dwd:design-time-name="30fb6fbe-7e26-47fd-8fa3-3c6f7f2a7488">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="53d87690-2ddc-4b6d-bd00-2c692d63ba5a">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>NrPerpsCustody</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="379796f0-9143-49fc-b6cf-894560b50aa8">
+          <ID>Nr Kills - Fact All Incident</ID>
+          <Name>Nr Kills - Fact All Incident</Name>
+          <Source dwd:design-time-name="fa8c3831-1b31-400c-b379-15c3ba63efb9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f75751c8-68f5-4e11-98da-25f0796e0414">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>NrKills</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="765aa0b7-b7d9-4c20-ab00-e08ef489414f">
+          <ID>Nr Wounds - Fact All Incident</ID>
+          <Name>Nr Wounds - Fact All Incident</Name>
+          <Source dwd:design-time-name="ef6756bf-b9ea-490a-9442-fa0d4b5ed7b8">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="91d06b13-6a57-4b7c-92b6-2dbface3e89c">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>NrWounds</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="394e3b8e-ace8-489e-98b5-9601091b79db">
+          <ID>Prop Dmg Cat - Fact All Incident</ID>
+          <Name>Prop Dmg Cat - Fact All Incident</Name>
+          <Source dwd:design-time-name="ddd92ee9-d37d-4db9-be85-e1fef1fe272a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6a03533d-a80f-40eb-81f3-9154abbfc59a">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>PropDmgCat</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b2318564-ee77-427a-a76e-08f8abb28c7c">
+          <ID>Prop Dmg Value - Fact All Incident</ID>
+          <Name>Prop Dmg Value - Fact All Incident</Name>
+          <Source dwd:design-time-name="e99cb409-0a29-474b-855f-5235ccdc27e1">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="16c739ee-01db-4431-8ae0-0a7c7d3ff7d0">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>PropDmgValue</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4ac9ca91-7224-42ab-aab9-4a4859fc0561">
+          <ID>Hostage Count - Fact All Incident</ID>
+          <Name>Hostage Count - Fact All Incident</Name>
+          <Source dwd:design-time-name="cb767417-c3c0-460a-b110-4ed902774ee6">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a5c84503-e9b5-426f-a242-669d07e3bfaa">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>HostageCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="246df90b-49d8-4a90-bdb6-cd392684fcee">
+          <ID>Ransom Amount - Fact All Incident</ID>
+          <Name>Ransom Amount - Fact All Incident</Name>
+          <Source dwd:design-time-name="8913c8ab-e7ef-4be6-927f-0a8904849ff0">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fc87c15d-b1a4-4d5c-8950-16aef1e58f23">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>RansomAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fb065bc1-8805-4302-8f40-201ddab910c5">
+          <ID>Ransom Paid - Fact All Incident</ID>
+          <Name>Ransom Paid - Fact All Incident</Name>
+          <Source dwd:design-time-name="a79f8355-a0f4-411d-8de3-58084cdb48e9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1e867fd1-3d49-4184-b294-1df32192be55">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>RansomPaid</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="42836c02-18ca-48a2-9d23-e054e9ceefd8">
+          <ID>Host Kid Outcome - Fact All Incident</ID>
+          <Name>Host Kid Outcome - Fact All Incident</Name>
+          <Source dwd:design-time-name="f5ceee26-ba62-4cff-be60-b06cef153e53">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="32034889-126a-46de-b025-e3f2954ed8b0">
+              <TableID>dbo_FactAllIncident</TableID>
+              <ColumnID>HostKidOutcome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c5703558-c1f1-4cf7-9f2f-b60a0df6e629">
+          <ID>Fact All Incident Count</ID>
+          <Name>Fact All Incident Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="68c39114-d338-4bde-8d79-6161837a0ce7">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="c1f786bd-975c-4a5f-a3af-68b2b15b4305">
+              <TableID>dbo_FactAllIncident</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9504394f-da98-453f-bea3-6abdf5a21348">
+          <CubeDimensionID>Dim Target</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="35592ad5-4c41-4133-b5da-0016cac0a009">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b26c1db9-859d-4c41-bf09-05db1f06f8ba">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a356e978-f668-4708-b1e7-6fc701e3ee8d">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>Target_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c45f6aba-a6f6-4a59-ac07-3586b2007675">
+          <CubeDimensionID>Dim Location</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5ac8ff6f-dc1d-420e-beed-c7b34dcac2c1">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="be6cb71c-3875-4215-a66e-0f93d777d764">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c66435bd-7e79-4913-9728-fd7eb7b68ba4">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>City_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f3bc89f1-68e0-46fd-bfe3-f8622eeba8c2">
+          <CubeDimensionID>Dim Incident</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ec822ce9-8324-42e1-8e32-b846e26ca9a8">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="59e00732-cea9-44b5-817b-f7291575bb0f">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6cdc7602-6802-4033-bf3c-1865e9c6d49e">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>Incident_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="74f2bb68-5c9b-4497-9d43-cf5f8d018302">
+          <CubeDimensionID>Dim Weapon</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="58e00651-cd3a-479a-bacf-ae7a8818310e">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="884cccac-cf0e-4b8f-8cdb-0e36d27cbaff">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e203c668-251f-4ed7-abe0-d29555ceae34">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>WeaponSubType_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5007a36b-60f2-42d4-8ccc-ef154362edee">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4f220360-ed8c-4aa1-b275-62a908c47bc7">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="25d7170c-3554-4bf6-9243-1f1f2a128b20">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="265941f1-1a6d-4ba3-8699-77efe300235a">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>Date_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="50df6cb8-b734-4f95-b28b-ee3f7bcdea7d">
+          <CubeDimensionID>Dim Attack</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0e46c134-33d1-4a77-bbdd-c2830a93d2c1">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3008e706-1484-4ed7-b91b-0933fb62ebd6">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3485e02c-30ab-4e5e-be79-1560686822b4">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>Attack_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="00a25c63-c393-489c-8ddc-9d43371e07e9">
+          <CubeDimensionID>Dim Group</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="efa1afb3-0d19-4978-9cf5-732ebf959742">
+              <AttributeID>SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5a14b2e9-8cb2-4f89-9049-70e4f3c42584">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1e266933-f81e-4f87-96b4-bbbafc052a3d">
+                    <TableID>dbo_FactAllIncident</TableID>
+                    <ColumnID>Group_SK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="ee85c70a-bfc4-4178-bbae-a75a297d6fd2">
+    <DataSourceViewID>DM</DataSourceViewID>
+  </Source>
+</Cube>

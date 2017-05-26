@@ -6,6 +6,32 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-721" scrolltop="-1984" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5980" y="8969" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimTarget" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4498" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00009211000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimTarget" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +47,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-721</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-1984</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -38,6 +64,40 @@
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
       <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="159">
+            <Shape Id="SK" Expanded="false">
+              <Attributes>
+                <Attribute Id="SK" />
+                <Attribute Id="S Target Name" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Nationality Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Nationality Name" />
+              </Attributes>
+              <Position x="223" y="20" />
+            </Shape>
+            <Shape Id="Target Sub Type Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Target Sub Type Name" />
+              </Attributes>
+              <Position x="223" y="68" />
+            </Shape>
+            <Shape Id="Target Type Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Target Type Name" />
+              </Attributes>
+              <Position x="427" y="68" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
     </Annotation>
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
@@ -65,10 +125,123 @@
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="9ce1b09a-dd68-4456-90fa-e35c958d1a0c">
+          <AttributeID>S Target Name</AttributeID>
+          <Name>S Target Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c8973b63-ffff-4d2e-a7fa-2807a4b10914">
+          <AttributeID>Target Sub Type Name</AttributeID>
+          <Name>Target Sub Type Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9b7d2b04-78db-466d-91dc-1ea26c9c7928">
+          <AttributeID>Nationality Name</AttributeID>
+          <Name>Nationality Name</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
+    <Attribute dwd:design-time-name="6813737b-cc88-432e-8e2f-dc5751adaa78">
+      <ID>S Target Name</ID>
+      <Name>S Target Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="aa038bd1-4904-42d6-95c2-81462f639f27">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="71849221-0c81-4a4f-8d15-43dbaf682c7b">
+            <TableID>dbo_DimTarget</TableID>
+            <ColumnID>S_TargetName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e64b5fea-e8b7-469b-bd44-90efb4df09c2">
+      <ID>Target Type Name</ID>
+      <Name>Target Type Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cec89e24-76f2-44b4-9af2-4ad9fe45eda1">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="10d60600-282d-469b-a655-20585f5a78a8">
+            <TableID>dbo_DimTarget</TableID>
+            <ColumnID>TargetTypeName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="33d0b7fb-1a06-4e87-8e8b-ae08a091718f">
+      <ID>Target Sub Type Name</ID>
+      <Name>Target Sub Type Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="98b1ea3a-923f-4e86-925a-19d7c8efd7a0">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="be402e49-b58d-460d-940e-253a1b4f6bdd">
+            <TableID>dbo_DimTarget</TableID>
+            <ColumnID>TargetSubTypeName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="096bd8f4-5e75-4847-9239-429e37e2163a">
+          <AttributeID>Target Type Name</AttributeID>
+          <Name>Target Type Name</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ead0397-6d02-4673-b735-c7d2b502ff9e">
+      <ID>Nationality Name</ID>
+      <Name>Nationality Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="82c7792e-f723-4a23-a45c-5f7e43967124">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ffa565ce-bac9-4c7a-ba20-c78b16d4b10c">
+            <TableID>dbo_DimTarget</TableID>
+            <ColumnID>NationalityName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
   </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="31e1aaca-62e3-45b5-99fd-0fb889fc5f44">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="76b134db-c27c-4918-9f85-984cdf2d6737">
+          <ID>Target Type Name</ID>
+          <Name>Target Type Name</Name>
+          <SourceAttributeID>Target Type Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="c7e5de11-8056-4bcf-826e-26a8f759c9ee">
+          <ID>Target Sub Type Name</ID>
+          <Name>Target Sub Type Name</Name>
+          <SourceAttributeID>Target Sub Type Name</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="77ba7b55-92a2-43c5-a8bf-865a0fb83058">
+      <ID>Hierarchy 1</ID>
+      <Name>Hierarchy 1</Name>
+      <Levels>
+        <Level dwd:design-time-name="913e3518-82ef-4c10-b77b-4558fc76a9e8">
+          <ID>Nationality Name</ID>
+          <Name>Nationality Name</Name>
+          <SourceAttributeID>Nationality Name</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>

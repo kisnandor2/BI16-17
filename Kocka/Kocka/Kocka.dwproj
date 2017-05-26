@@ -8,12 +8,12 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>DM.cube</Name>
-      <FullPath>DM.cube</FullPath>
+      <Name>DM 1.cube</Name>
+      <FullPath>DM 1.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>DM.partitions</Name>
-          <FullPath>DM.partitions</FullPath>
+          <Name>DM 1.partitions</Name>
+          <FullPath>DM 1.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
